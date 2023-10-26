@@ -1,0 +1,23 @@
+.cardElement{
+    height: 80%;
+    width: 300px;
+    margin: 20px 40px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 7px;    
+}
+
+li{
+    list-style: none;
+    padding: 2px;
+}
+ul{
+border-top: 1px solid black;
+padding-top: 5px;
+}
+li > span {
+    margin-right: 5px;
+}
+a{
+    border-radius: 20px !important;
+}
