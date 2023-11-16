@@ -1,29 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 function Users() {
+
+  const [notes, setNotes] = useState([]);
+
+  async function fetchNotes (){
+    const response = await axios.get('http://localhost:3000/notes/');
+    setNotes(response.data);
+  }
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
+
+
+
   return (
-    <div className='mt-5'>
+    <div>
+      <h1>Notes</h1>
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">DOB </th>
-            <th scope="col">City</th>
-            <th scope="col">State</th>
+            <th key={"id"}>ID</th>
+            <th key={"fn"}>First Name</th>
+            <th key={"ln"}>Last Name</th>
+            <th key={"dob"}>DOB</th>
+            <th key={"city"}>City</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
+          {
+            notes.map(note => {
+              return (<tr key={`${note.id}-row`}>
+                <td key={`${note.id}-id`}>{note.id}</td>
+                <td key={`${note.id}-fn`}>{note.firstName}</td>
+                <td key={`${note.id}-ln`}>{note.lastName}</td>
+                <td key={`${note.id}-dob`}>{note.dob}</td>
+                <td key={`${note.id}-city`}>{note.city}</td>
+              </tr>)
+            }
+            )
+          }
         </tbody>
-
-      </table>
+      </table >
     </div>
   )
 }

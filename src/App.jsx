@@ -6,10 +6,9 @@ import Modify from './component/Modify';
 import Delete from './component/Delete';
 import Home from './component/Home';
 import Users from './component/Users';
-import axios from 'axios';
+
 
 function App() {
-  // const [user, setUser] = useState([]); 
 
  
 
