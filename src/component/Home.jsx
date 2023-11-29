@@ -13,14 +13,17 @@ function Home() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-        <Link to="/register" className="nav-link" aria-current="page">Register</Link>
+        <Link to="/addTeacher" className="nav-link" aria-current="page">Add Teacher</Link>
         </li>
         <li className="nav-item">
-        <Link to="/modify" className="nav-link" aria-current="page">Modify</Link>
+        <Link to="/addStudent" className="nav-link" aria-current="page">Add Student</Link>
+        </li>
+        <li className="nav-item">
+        <Link to="/modify" className="nav-link" aria-current="page">Delete Student</Link>
         </li>
         
         <li className="nav-item">
-        <Link to="/delete" className="nav-link" aria-current="page">Delete</Link>
+        <Link to="/delete" className="nav-link" aria-current="page">Delete Teacher</Link>
         </li>
       </ul>
     </div>

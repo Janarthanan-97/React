@@ -6,8 +6,9 @@ function Users() {
   const [notes, setNotes] = useState([]);
 
   async function fetchNotes (){
-    const response = await axios.get('http://localhost:3000/notes/');
+    const response = await axios.get('http://localhost:3000/details/');
     setNotes(response.data);
+    console.log(response.data);
   }
 
   useEffect(() => {
@@ -15,37 +16,32 @@ function Users() {
   }, []);
 
 
-
-
   return (
     <div>
-      <h1>Notes</h1>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th key={"id"}>ID</th>
-            <th key={"fn"}>First Name</th>
-            <th key={"ln"}>Last Name</th>
-            <th key={"dob"}>DOB</th>
-            <th key={"city"}>City</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            notes.map(note => {
-              return (<tr key={`${note.id}-row`}>
-                <td key={`${note.id}-id`}>{note.id}</td>
-                <td key={`${note.id}-fn`}>{note.firstName}</td>
-                <td key={`${note.id}-ln`}>{note.lastName}</td>
-                <td key={`${note.id}-dob`}>{note.dob}</td>
-                <td key={`${note.id}-city`}>{note.city}</td>
-              </tr>)
-            }
-            )
-          }
-        </tbody>
-      </table >
-    </div>
+      {
+        notes.map(ele=>{
+          return(
+            <table key={ele.id} className="table table-dark table-striped">
+              <thead key={`${ele.id}-head`}>
+                <tr key={`${ele.id}-row`} className='table-bordered border-primary'>
+                  <th key={ele.teacher}>
+                    {ele.teacher}
+                  </th>
+                </tr>
+              </thead>
+              <tbody className='table-group-divider table-light'>
+                {ele.student.map(stu=>{
+                  return(<tr key={`${stu}-row`}>
+                  <td key={stu}>{stu}</td>
+                </tr>)
+                })}
+              </tbody>
+
+            </table>            
+          )
+        })
+      }
+     </div>
   )
 }
 
