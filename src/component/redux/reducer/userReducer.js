@@ -1,6 +1,6 @@
 const userID = sessionStorage.getItem('userID');
 let value;
-if(userID != ""){
+if(userID){
     value = true;
 }
 else{

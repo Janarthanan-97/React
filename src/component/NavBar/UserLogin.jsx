@@ -16,6 +16,16 @@ function UserLogout() {
     }
 
     return (
+        <>
+        <li className="nav-item">
+            <Link to='/rooms' className="nav-link">Book Rooms</Link>
+        </li>
+        <li className="nav-item">
+            <Link to='/myRooms' className="nav-link">My Rooms</Link>
+        </li>
+        <li className="nav-item">
+            <Link to='/addRoom' className="nav-link">Add Room</Link>
+        </li>
         <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {userID}
@@ -24,6 +34,7 @@ function UserLogout() {
                 <li className="dropdown-item" onClick={handleLogout}>Logout</li>
             </ul>
         </li>
+        </>
     )
 }
 

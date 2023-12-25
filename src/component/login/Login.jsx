@@ -14,7 +14,7 @@ function Login() {
         const user = await authService.signin({userName, password})
         if(user){
             dispatch({type : 'TRUE'});
-            navigate('/')
+            navigate('/rooms')
         }
     }
 
