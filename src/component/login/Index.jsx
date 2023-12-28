@@ -1,7 +1,7 @@
 import React from 'react'
-import './login.css'
 import Login from './Login'
 import Register from './Register'
+import './login.css'
 
 function Index() {
   return (

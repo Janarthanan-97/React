@@ -1,31 +1,25 @@
 import React, { useState } from 'react'
-import authService from '../service/auth'
-import { useNavigate } from 'react-router-dom';
+import request from '../service/request';
 
 function Register() {
-    const [name, setName] = useState();
+
     const [password, setPassword] = useState();
-    const [userID, setUserID] = useState();
-    const navigate = useNavigate();
+    const [emailID, setUserID] = useState();
 
     const handleRegister = async ()=>{
-        console.log(name, password, userID)
-        await authService.signup({name, password, userID})
-        navigate('/login')
+        let res = await request.createUser({
+            password,
+            emailID
+        })
+        alert(res)
     }
     
     return (
-        <div><div id="register" className="m-5 box-shadow p-5">
+        <><div id="register" className="m-5 box-shadow p-5">
             <div className="mb-3 row">
-                <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Name</label>
+                <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Email-ID</label>
                 <div className="col-sm-10">
-                    <input type="text" className="form-control" placeholder='Enter name' onChange={(e)=>{setName(e.target.value)}} />
-                </div>
-            </div>
-            <div className="mb-3 row">
-                <label htmlFor="staticEmail" className="col-sm-2 col-form-label">UserID</label>
-                <div className="col-sm-10">
-                    <input type="text" className="form-control" placeholder='Enter UserID' onChange={(e)=>{setUserID(e.target.value)}}/>
+                    <input type='email' className="form-control" placeholder='Enter UserID' onChange={(e)=>{setUserID(e.target.value)}}/>
                 </div>
             </div>
             <div className="mb-3 row">
@@ -38,7 +32,7 @@ function Register() {
                 <button className="btn btn-primary mb-3" onClick={handleRegister}>Register</button>
             </div>
             <br />
-        </div></div>
+        </div></>
     )
 }
 
