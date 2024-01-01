@@ -6,7 +6,7 @@ function ViewUrls() {
 
     const params = useParams();
     const navigate = useNavigate();
-    const baseURL = 'http://localhost:5173/api/url';
+    const baseURL = import.meta.env.VITE_URL;
     const [urls, setUrls] = useState([]);
 
     useEffect(() => {
@@ -53,7 +53,7 @@ function ViewUrls() {
                                                     <td>{idx + 1}</td>
                                                     <td>{url.longURL}</td>
                                                     <td>
-                                                        <a href={`${baseURL}/${url.shortId}`} target='_blank' rel="noreferrer">{url.shortURL}</a>
+                                                        <a href={`${baseURL}/url/${url.shortId}`} target='_blank' rel="noreferrer">{url.shortURL}</a>
                                                     </td>
                                                     <td>{url.clicks}</td>
                                                 </tr>

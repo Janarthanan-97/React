@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = VITE_URL
+const baseURL = import.meta.env.VITE_URL
 
 
 const authInstance = axios.create({
