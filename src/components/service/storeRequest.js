@@ -16,7 +16,6 @@ request.interceptors.request.use(config=>{
 
 const storeRequest = {
     getItem: async()=>{
-        console.log("first")
         const res = await request.get('/items/getItem')
         return res.data.message
     },

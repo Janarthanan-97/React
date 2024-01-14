@@ -4,14 +4,19 @@ import Button from 'react-bootstrap/Button';
 import orderRequest from '../service/orderRequest';
 
 function FinalBill(params) {
-    const { array, setArray, total } = params
+    const { array, setArray, total, customerName, customerNumber, setCustomerNumber, setTotal} = params
     const [change, setChange] = useState(0)
     const [show, setShow] = useState(false);
   
     const handleShow = () => setShow(true);
 
-    const handleBill = ()=>{
-        let res = orderRequest.addOrder()
+    const handleBill =  ()=>{
+        let orders={items:[]}
+        array.map(e=>{
+            orders.items.push({id:e.itemID, quantity:e.numOfItem})
+        })
+        let res = orderRequest.addOrder({customerName, customerNumber, orders})
+        alert(res)
         handleShow();
         
     }
@@ -64,7 +69,7 @@ function FinalBill(params) {
                     Bill
                 </Button>
                 </div>
-                <PrintBill show={show} setShow={setShow} array = {array} total={total} />
+                <PrintBill show={show} setShow={setShow} array = {array} total={total} setCustomerNumber={setCustomerNumber} setTotal={setTotal} setArray={setArray} />
             </div>
         </div>
     )

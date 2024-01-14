@@ -4,7 +4,7 @@ import storeRequest from '../service/storeRequest'
 
 function StockDetail() {
   const [item, setItem] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0)
+  // const [totalPrice, setTotalPrice] = useState(0)
   let pre = 0
 
   async function fetchItem() {
@@ -21,11 +21,11 @@ function StockDetail() {
   }, [])
 
   return (
-    <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+    <div>
+      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
       <StockCard name='No of Items' number={count} />
       <StockCard name='Total cost' number = {pre} />
-        {/* <StockCard  /> */}
-        {/* <StockCard /> */}
+    </div>
     </div>
   )
 }

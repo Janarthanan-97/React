@@ -1,24 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavIndex from './navBar/NavIndex'
-import BillingTable from './billing/BillingTable'
-import ListAllStock from './stock/ListAllStock'
-import StockDetail from './stock/StockDetail'
-import AddStock from './stock/AddStock'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Outlet, Route, Routes, useNavigate } from 'react-router-dom'
 
 function Index() {
+  let navigate = useNavigate()
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/')
+    }
+    else {
+      navigate('/login')
+    }
+  }, [])
+
   return (
-    <div className='app' style={{display:'flex'}}>
-      {/* <Login /> */}
-    <BrowserRouter>
-    <NavIndex />
-     <Routes>
-      <Route path='/bill' element={<BillingTable />} />
-      <Route path='/all-item' element={<ListAllStock />} />
-      <Route path='/' element={<StockDetail />} />
-      <Route path='/add-stock' element={<AddStock />} />
-     </Routes>
-    </BrowserRouter>
+    <div className='grid-container'>
+      <div className='nav-grid'><NavIndex /></div>
+      <div className='page-grid'><Outlet /></div>
     </div>
   )
 }

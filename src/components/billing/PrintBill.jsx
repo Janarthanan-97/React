@@ -2,10 +2,16 @@ import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
+
 function PrintBill(props) {
 
-  const { show, setShow, array, total } = props;
-  const handleClose = () => setShow(false);
+  const { show, setShow, array, total, setCustomerNumber, setTotal, setArray } = props;
+  const handleClose = () => {
+    setCustomerNumber('');
+    setArray([])
+    setTotal(0)
+    setShow(false)
+  };
   const handlePrint = () => {
     window.print()
   }

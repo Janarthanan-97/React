@@ -35,10 +35,7 @@
 .nav-bar{
     background: linear-gradient(#50cc7f 0%, #f5d100 100%);
     height: 100%;
-    width: 25%;
     color: white;
-    display: flex;
-    flex-direction: column;
 }
 .nav-list > div{
     background-color: #276221;
@@ -56,10 +53,35 @@
     background-color: #27622180;
 }
 
-.app{
+.grid-container{
     height: 100vh;
     width:100vw;
+    display:grid;
+    grid-template-columns: '20vh 20vh 20vh 20vh 20vh';
+}
+.nav-grid{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    min-width: 100%;
+    max-width: 100%;
+}
+.page-grid{
+    grid-column-start: 2;
+    grid-column-end: 5;
 }
 Link{
-    text-decoration: none;}
+    text-decoration: none;
+}
+
+/* .menu{
+    display: none;
+}
+
+@media (max-width: 952px) {
+    .menu{
+        display: flex;
+        margin: 5px;
+    }
+        
+}*/
 

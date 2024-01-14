@@ -1,9 +1,13 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 function UserInfo() {
+const navigate = useNavigate()
+
     const handleLogout = ()=>{
-        console.log("logout")
+        localStorage.clear();
+        navigate('/login')
     }
   return (
     <div style={{height:'30%', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'2rem'}}>

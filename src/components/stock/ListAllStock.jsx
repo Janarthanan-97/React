@@ -17,15 +17,15 @@ function ListAllStock() {
 
   return (
     <div>
-        <div style={{background:'#276221', height:60, display:'flex', flexDirection:'row-reverse'}}>
+        <div style={{background:'#276221', display:'flex', flexDirection:'row-reverse'}}>
             <div style={{height:'60%',width:'300px', display:'flex', margin:10, gap:5}}>
-            <Form.Control type="email" placeholder="Item" />
+            <Form.Control type="text" placeholder="Item" />
             <Button variant="warning">
                     Search
                 </Button>
             </div>
         </div>
-        <div className='grid-div' style={{margin:'10px', gap:'5px', display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center'}}>
+        <div style={{margin:'5px', gap:'5px', display:'flex', flexWrap:'wrap', alignItems:'center', width:'60vw'}}>
           {item.map(ele=>{
             console.log(ele.name)
             return <ItemCard name={ele.name} price={ele.price} number = {ele.stock} id={ele._id} setChange={setChange} />

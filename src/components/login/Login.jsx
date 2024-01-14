@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import userRequest from '../service/userRequest';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
 
+  const navigate = useNavigate()
   const [email, setEmail] = useState();
   const [password, setPassword] = useState()
 
@@ -15,7 +17,7 @@ function Login() {
     const res = await userRequest.login(user);
     localStorage.setItem('token', res)
     if(res){
-    console.log("first")
+    navigate('/')
     }
   }
 
@@ -38,8 +40,8 @@ function Login() {
       <Button variant="success" type="submit" style={{float:'right'}} onClick={handleLogin}>
         Login
       </Button>
+      <div onClick={()=>{navigate('/register')}} style={{textAlign:'center', marginTop:'10px', color:'green', cursor:'pointer'}}>New User Register</div>
     </Form>
-    <div to='/register' style={{textAlign:'center', marginTop:'10px', color:'green'}}>New User Register</div>
        </div>
     )
 }

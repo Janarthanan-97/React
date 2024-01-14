@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import userRequest from '../service/userRequest';
 
 function Register() {
@@ -9,6 +9,7 @@ function Register() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [cpassword, setCpassword] = useState()
+  const navigate = useNavigate()
 
 
   const handleRegister = async (event)=>{
@@ -50,11 +51,12 @@ function Register() {
         <Form.Control type="password" placeholder="Confirm Password" onChange={(e)=>{setCpassword(e.target.value)}} />
       </Form.Group>
 
+      <div onClick={()=>{navigate('/login')}} style={{textAlign:'center', marginTop:'10px', color:'green', cursor:'pointer'}}>Already have an account</div>
+
       <Button variant="success" type="submit" style={{float:'right'}} onClick={handleRegister}>
         Register
       </Button>
          </Form>
-         <Link to='/' style={{textAlign:'center', marginTop:'10px', color:'green'}}>Already have an account</Link>
     </div>
     )
 }
