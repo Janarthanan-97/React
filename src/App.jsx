@@ -13,7 +13,6 @@ import Verify from './components/login/Verify'
 import ForgetPassword from './components/login/ForgetPassword'
 import PasswordReset from './components/login/PasswordReset'
 
-
 function App() {
 
   return (
@@ -21,6 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Index />} >
+            {/* Nested routes */}
             <Route path='/bill' element={<BillingTable />} />
             <Route path='/all-item' element={<ListAllStock />} />
             <Route path='/' element={<StockDetail />} />
