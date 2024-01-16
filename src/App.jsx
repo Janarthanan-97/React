@@ -9,6 +9,9 @@ import ListAllStock from './components/stock/ListAllStock'
 import StockDetail from './components/stock/StockDetail'
 import AddStock from './components/stock/AddStock'
 import CustOrder from './components/billing/CustOrder'
+import Verify from './components/login/Verify'
+import ForgetPassword from './components/login/ForgetPassword'
+import PasswordReset from './components/login/PasswordReset'
 
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
           </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/verify/:token' element={<Verify />} />
+          <Route path='/forget-password' element={<ForgetPassword />} />
+          <Route path='/password-reset/:resetToken' element={<PasswordReset />} />
         </Routes>
       </BrowserRouter>
     </div>

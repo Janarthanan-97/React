@@ -9,12 +9,23 @@ const request = axios.create({
 const userRequest = {
     login: async(user)=>{
         const res = await request.put('/login', user);
-        return res.data
+        return res.data.message
     },
     register: async(user)=>{
         const res = await request.post('/register', user);
-        console.log(res.data)
-        return res.data;
+        return res.data.message;
+    },
+    verify: async(token)=>{
+        const res = await request.get(`/verify/${token}`)
+        return res.data.message
+    },
+    forgetPassword: async(object)=>{
+        const res = await request.put('/forgetPassword', object)
+        return res.data.message
+    },
+    resetPassword: async (object)=>{
+        const res = await request.put('/passwordReset', object)
+        return res.data.message
     }
 }
 

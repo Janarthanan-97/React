@@ -22,7 +22,8 @@ function StockDetail() {
 
   return (
     <div>
-      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+      <div style={{background:'#276221', display:'flex', height:'50px', marginBottom:'10px'}}></div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', gap:'10px'}}>
       <StockCard name='No of Items' number={count} />
       <StockCard name='Total cost' number = {pre} />
     </div>

@@ -72,16 +72,47 @@
 Link{
     text-decoration: none;
 }
+#check{
+    display: none ;
+}
 
-/* .menu{
+.menu{
+    display: none;
+}
+.user-info{
+   height: 10rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+}
+.navopt-div{
+    background: #27622150;
+}
+.logout-div{
     display: none;
 }
 
 @media (max-width: 952px) {
     .menu{
-        display: flex;
+        display: block;
         margin: 5px;
     }
-        
-}*/
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-grid{
+        /* margin-left: -100%; */
+        background-color: #276221;
+    }
+    .user-info{
+        display: none;
+    }
+    .logout-div{
+        display: block;
+    }
+  
+}   
 
