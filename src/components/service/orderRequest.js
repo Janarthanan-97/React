@@ -17,8 +17,7 @@ request.interceptors.request.use(config=>{
 const orderRequest = {
     addOrder: async (object)=>{
         let res = await request.post('/orders/addOrder', object);
-        console.log(res.data)
-
+        return res.data.message
     },
     getAllOrder: async ()=>{
         let res = await request.get('/orders/getAllOrder')
@@ -27,7 +26,6 @@ const orderRequest = {
     getOrder : async(object)=>{
         let res = await request.put('/orders/getOrder', object)
         return res.data.message
-
     }
 }
 

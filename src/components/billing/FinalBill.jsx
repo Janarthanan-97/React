@@ -10,12 +10,12 @@ function FinalBill(params) {
   
     const handleShow = () => setShow(true);
 
-    const handleBill =  ()=>{
+    const handleBill =  async ()=>{
         let orders={items:[]}
         array.map(e=>{
             orders.items.push({id:e.itemID, quantity:e.numOfItem})
         })
-        let res = orderRequest.addOrder({customerName, customerNumber, orders})
+        let res = await orderRequest.addOrder({customerName, customerNumber, orders})
         alert(res)
         handleShow();
         
