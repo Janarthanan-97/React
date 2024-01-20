@@ -52,14 +52,13 @@ function BillingTable() {
         })
     }
 
-    async function fetchOrder(){
-        let custObj = {customerNumber}
+    async function fetchOrder() {
+        let custObj = { customerNumber }
         let res = await orderRequest.getOrder(custObj)
-        if(res){
+        if (res) {
             setCustomerName(res.customerName)
         }
-        if(customerNumber.length<10)
-        {
+        if (customerNumber.length < 10) {
             setCustomerName('')
         }
     }
@@ -74,11 +73,11 @@ function BillingTable() {
                     <tr>
                         <th colSpan='2'>
                             <label>Customer Name: </label>
-                            <input placeholder='Name' value={customerName} onChange={(e)=>{setCustomerName(e.target.value)}} />
+                            <input placeholder='Name' value={customerName} onChange={(e) => { setCustomerName(e.target.value) }} />
                         </th>
                         <th colSpan='2'>
                             <label>Mobile:</label>
-                            <input placeholder='Phone' onChange={(e)=>{setCustomerNumber(e.target.value)}} />
+                            <input placeholder='Phone' onChange={(e) => { setCustomerNumber(e.target.value) }} />
                         </th>
                     </tr>
                     <tr>

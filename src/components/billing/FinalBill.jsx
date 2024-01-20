@@ -18,10 +18,14 @@ function FinalBill(params) {
         let res = await orderRequest.addOrder({customerName, customerNumber, orders})
         alert(res)
         handleShow();
-        
     }
 
     const handleDelete = (index) => {
+        console.log(array[index].price)
+        setTotal(state=>{
+            state = state - array[index].price;
+            return state
+        })
         array.splice(index, 1);
         setArray(array)
         setChange(state => {
