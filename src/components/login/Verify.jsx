@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import userRequest from '../service/userRequest'
 import HashLoader from "react-spinners/HashLoader";
 
@@ -17,6 +17,10 @@ function Verify() {
         setLoading(false)
     }
 
+    const handleClick = ()=>{
+      navigate('/login')
+    }
+
     useEffect(()=>{veriyRequest()}, [message])
 
   return (
@@ -31,7 +35,7 @@ function Verify() {
             />
           </div>
       :
-      <div className='box-shadow m-5 p-5 d-flex row justify-content-center align-items-center'>Account activated, Please Login</div>
+      <div className='box-shadow m-5 p-5 d-flex row justify-content-center align-items-center'>Account activated, Please <span style={{color:'green', cursor:'pointer', textAlign:'center'}} onClick={handleClick} >Login</span></div>
     }
     </>
   )

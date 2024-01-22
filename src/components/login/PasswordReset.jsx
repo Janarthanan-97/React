@@ -46,6 +46,8 @@ function PasswordReset() {
                                 </Form.Text>
                             </Form.Group>
 
+                            <div onClick={() => { navigate('/login') }} style={{ textAlign: 'right', margin: '10px', color: 'green', cursor: 'pointer' }}>Login</div>
+
                             <Button variant="success" type="submit" style={{ float: 'right' }} onClick={handleClick}>
                                 Submit
                             </Button>

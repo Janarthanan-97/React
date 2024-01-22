@@ -35,14 +35,14 @@ function CustOrder() {
 
             <div>
                 {
-                    array.map(e => {
+                    array.map((e) => {
                         return (
                             <table>
                                 <thead>
                                     <tr>
                                         <th colSpan='2'>
                                             {
-                                                Date(e.date)
+                                                e.date
                                             }
                                         </th>
                                     </tr>

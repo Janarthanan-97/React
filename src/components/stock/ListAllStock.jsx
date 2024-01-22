@@ -3,14 +3,18 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import ItemCard from './ItemCard';
 import storeRequest from '../service/storeRequest';
+import HashLoader from "react-spinners/HashLoader";
 
 function ListAllStock() {
   const [item, setItem] = useState([]);
   const [searchItem, setSearchItem] = useState('');
   const [change, setChange] = useState(0);
+  const [loading, setLoading] = useState(false)
 
   async function fetchItem() {
+    setLoading(true)
     let res = await storeRequest.getItem();
+    setLoading(false)
     if (searchItem != '') {
       let array = [];
       res.map(e => {
@@ -29,7 +33,18 @@ function ListAllStock() {
   useEffect(() => { fetchItem() }, [change])
 
   return (
-    <div>
+    <>
+    {
+      loading
+      ?
+      <div className='m-5 p-5 d-flex row justify-content-center align-items-center'>
+          <HashLoader
+              color="#36d7b7"
+              cssOverride={{}}
+          />
+      </div>
+      :
+      <div>
       <div style={{ background: '#276221', display: 'flex', flexDirection: 'row-reverse' }}>
         <div style={{ height: '60%', width: '300px', display: 'flex', margin: 10, gap: 5 }}>
           <Form.Control type="text" placeholder="Item" onChange={(e) => { setSearchItem(e.target.value); fetchItem();
@@ -44,9 +59,10 @@ function ListAllStock() {
           console.log(ele.name)
           return <ItemCard name={ele.name} price={ele.price} number={ele.stock} id={ele._id} setChange={setChange} />
         })}
-
       </div>
     </div>
+    }
+    </>
   )
 }
 
