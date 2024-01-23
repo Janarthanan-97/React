@@ -25,6 +25,7 @@ const storeRequest = {
     },
     deleteItem: async (object) =>{
         let res = await request.put('/items/deleteItem', object)
+        return res.data.message;
         
     },
     addItem: async (object) => {

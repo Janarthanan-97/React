@@ -8,13 +8,13 @@ function EditCard(props) {
   const [price, setPrice] = useState(object.price);
   const [stock, setStock] = useState(object.number);
   const id = object.id;
- 
+
   const handleUpdate = async () => {
     let ItemObj = {
       id, price, stock
     }
     let res = await storeRequest.updateItem(ItemObj)
-    setChange(pre =>{
+    setChange(pre => {
       pre ? pre = 0 : pre = 1;
       return pre
     })
@@ -23,8 +23,15 @@ function EditCard(props) {
   };
 
   const handleClose = () => setShow(false);
-  const handleDelete = async ()=>{
-    let res = await storeRequest.deleteItem({id})
+  const handleDelete = async () => {
+    if (confirm("Click OK to delete")) {
+      let res = await storeRequest.deleteItem({ id })
+      alert(res)
+    }
+    setChange(pre => {
+      pre ? pre = 0 : pre = 1;
+      return pre
+    })
   }
 
   return (
@@ -38,13 +45,13 @@ function EditCard(props) {
             <div className="input-group-prepend">
               <span className="input-group-text" id="basic-addon1">Price</span>
             </div>
-            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={price} onChange={(e)=>{setPrice(e.target.value)}} />
+            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={price} onChange={(e) => { setPrice(e.target.value) }} />
           </div>
           <div className="input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text" id="basic-addon1">Stock</span>
             </div>
-            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={stock} onChange={(e)=>{setStock(e.target.value)}} />
+            <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={stock} onChange={(e) => { setStock(e.target.value) }} />
           </div>
 
         </Modal.Body>
