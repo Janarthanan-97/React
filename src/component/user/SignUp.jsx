@@ -30,32 +30,32 @@ function SignUp() {
                 console.log(name, email)
                 const response = await instance.authInstance.post('/users/signup', { name, email, password });
                 console.log(response.data)
-                // setInfo(`Hi ${name}!! Your account activation link has been sent through Email. Please check your Inbox/Spam !!  `)
-                // setMsg(''), setName(''), setEmail(''), setPassword(''), setCPassword('')
+                setInfo(`Hi ${name}!! Your account activation link has been sent through Email. Please check your Inbox/Spam !!  `)
+                setMsg(''), setName(''), setEmail(''), setPassword(''), setCPassword('')
             }
             catch (error) {
                 console.log(error)
             }
         }
-        // else {
-        //     if (email == "" && password == "" && name == "") {
-        //         setMsg("Please fill the details above")
-        //     } else if (email == "" && password == "") {
-        //         setMsg("Please enter your Email and Password")
-        //     } else if (email == "" && name == "") {
-        //         setMsg("Please enter your Username and Email")
-        //     } else if (password == "" && name == "") {
-        //         setMsg("Please enter your Username and Password")
-        //     } else if (name == "") {
-        //         setMsg("Please enter your Name")
-        //     }
-        //     else if (email == "") {
-        //         setMsg("Please enter your Email")
-        //     }
-        //     else {
-        //         setMsg("Please enter your Password")
-        //     }
-        // }
+        else {
+            if (email == "" && password == "" && name == "") {
+                setMsg("Please fill the details above")
+            } else if (email == "" && password == "") {
+                setMsg("Please enter your Email and Password")
+            } else if (email == "" && name == "") {
+                setMsg("Please enter your Username and Email")
+            } else if (password == "" && name == "") {
+                setMsg("Please enter your Username and Password")
+            } else if (name == "") {
+                setMsg("Please enter your Name")
+            }
+            else if (email == "") {
+                setMsg("Please enter your Email")
+            }
+            else {
+                setMsg("Please enter your Password")
+            }
+        }
     }
 
     const formStyles = {

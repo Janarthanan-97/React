@@ -24,7 +24,7 @@ function Signin() {
                 if (response.data.token) {
                     const response = await instance.protectedInstance.get('/url/getId');
                     const res = response.data;
-                    console.log(res)
+                    setMsg(res.message)
                     const params_id = res.user_ID;
                     navigate(`/dashboard/${params_id}`)
                 }
