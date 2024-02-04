@@ -125,6 +125,10 @@ body {
     .navbar a {
         display: none;
     } 
+    .container{
+        width: 90vw;
+        margin: 0 10px;
+    }
 }
 
 /* -------------------------home--------------------------------- */
@@ -216,7 +220,6 @@ body {
     }
     .home-content{
         width: 80vw;
-        margin: 0 auto;
         text-align: center;
     }
 }
@@ -289,6 +292,9 @@ body {
         display: flex;
         margin : 0px 50px;
         text-align: center;
+    }
+    .about-text p{
+        padding: 0 15px;
     }
 }
 /* -------------------------Skills--------------------------------- */
@@ -559,6 +565,9 @@ body {
         flex-direction: column;
         justify-content: center;
         text-align: center;
+    }
+    .contact-text{
+        height: 450px;
     }
 }
 

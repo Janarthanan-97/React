@@ -11,7 +11,7 @@ import Image from './component/Image'
 
 function App() {
   return (
-    <>
+    <div className='.container'>
    <Navbar />
    <Home />
    <About />
@@ -19,7 +19,7 @@ function App() {
    <Portfolio />
    <Contact />
    <Footer />
-    </>
+    </div>
   )
 }
 
