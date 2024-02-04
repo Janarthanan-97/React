@@ -133,7 +133,6 @@ body {
     position: relative;
     width: 100%;
     justify-content: space-between;
-    /* height: 100vh; */
     background: var(--bg);
     color: var(--light);
     display: flex;
@@ -223,7 +222,6 @@ body {
     display: grid;
     grid-template-columns: 0.8fr 1.4fr;
     align-items: center;
-    height: 100vh;
 }
 
 .about-img img {
