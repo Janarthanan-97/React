@@ -142,7 +142,6 @@ body {
 
 .home-content {
     width: 700px;
-    max-width: 50vw;
     animation: slideTop 1s ease forwards;
 }
 
@@ -215,6 +214,11 @@ body {
         gap: 100px;
         margin-top: 30px;
     }
+    .home-content{
+        width: 80vw;
+        margin: 0 auto;
+        text-align: center;
+    }
 }
 /* -------------------------about--------------------------------- */
 
@@ -227,10 +231,10 @@ body {
 .about-img img {
     padding-bottom: 20%;
     height: auto;
-    max-width: 500px;
     width: 100%;
     border-radius: 8px;
     margin-left: 50px;
+    margin-top: 100px;
 }
 
 .about-text h2 {
@@ -253,6 +257,8 @@ body {
     line-height: 1.4;
     margin-bottom: 4rem;
    padding-right: 50px;
+   text-align: justify;
+   text-justify: inter-word;
 }
 
 @media (max-width:1550px) {
@@ -279,13 +285,17 @@ body {
     .about-img img {
         display: none;
     }
+    .about{
+        display: flex;
+        margin : 0px 50px;
+        text-align: center;
+    }
 }
 /* -------------------------Skills--------------------------------- */
 
 .service {
     font-size: 20px;
     line-height: 1.4;
-    margin-bottom: 4rem;
 }
 
 .container {
@@ -364,7 +374,7 @@ body {
 /* -------------------------Portfolio--------------------------------- */
 .main-text {
     padding-top: 130px;
-    margin-top: 200px;
+    margin-top: 2rem;
 }
 
 .main-text h2 {
@@ -460,7 +470,8 @@ body {
     align-items: center;
     gap: 3rem;
     padding-left: 30px;
-    margin-top: 130px;
+    margin-top: 200px;
+    margin-bottom: 50px;
 }
 
 .contact-text h2 {
@@ -546,6 +557,8 @@ body {
     .contact{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -586,7 +599,7 @@ svg {
     height: 500px;
     width: 500px;
     animation: rotate 5s infinite linear forwards, appear 2s ease-out forwards;
-    animation-delay: 7s;
+    animation-delay: 3s;
     position: absolute;
     opacity: 0;
 }
@@ -627,5 +640,21 @@ circle {
     stroke-dasharray: 35.5, 284;
     stroke-dashoffset: -230.75;
 }
-/* -------------------------MediaQuery--------------------------------- */
+
+@media (max-width:952px) {
+    svg{
+        height: 350px;
+        width: 350px;
+    }
+    .image-div img{
+        height: 365px;
+        width: 365px;
+    }
+    .image-container{
+        flex-direction: column-reverse;
+        height: 400px;
+        width: 400px;
+    }
+}
+/* -------------------------end--------------------------------- */
 
