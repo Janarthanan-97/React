@@ -294,7 +294,7 @@ body {
         text-align: center;
     }
     .about-text p{
-        padding: 0 15px;
+        padding: 0 5px;
     }
 }
 /* -------------------------Skills--------------------------------- */
@@ -375,6 +375,18 @@ body {
     border-radius: 8px;
     line-height: 40px;
     font-weight: 500;
+}
+
+@media (max-width:952px) {
+    .service-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .item{
+        min-width: 260px;
+    }   
 }
 
 /* -------------------------Portfolio--------------------------------- */
