@@ -385,7 +385,7 @@ body {
         align-items: center;
     }
     .item{
-        min-width: 350px;
+        min-width: 250px;
     }   
 }
 
