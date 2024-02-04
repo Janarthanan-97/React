@@ -8,8 +8,8 @@ function Contact() {
                 <h4>Let's Work together</h4>
                 <p></p>
                 <div className='contact-list'>
-                    <li><i class='bx bx-mail-send'></i> janamadhav13@gmail.com</li>
-                    <li><i class='bx bxs-phone-call' ></i> 9597019410</li>
+                    <li><i class='bx bx-mail-send'></i> <a href='mailto:janamadhav13@gmail.com'>janamadhav13@gmail.com</a></li>
+                    <li><i class='bx bxs-phone-call' ></i> <a href='Tel:9597019410'>9597019410</a></li>
                 </div>
             </div>
             <div className='contact-form'>

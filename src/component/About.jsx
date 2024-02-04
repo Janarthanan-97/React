@@ -3,7 +3,7 @@ import React from 'react'
 function About() {
   return (
     <section className='about' id='about'>
-        <div className='about-img'>
+        <div className='about-img container'>
         <img src="https://www.dropbox.com/scl/fi/74ezk5g8erfhyfde1qg9e/About_Photo.jpg?rlkey=841n4mht7xical0er712f79r5&dl=0&raw=1" alt="drive image"/>
         </div>
         <div className='about-text'>

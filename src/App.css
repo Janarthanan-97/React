@@ -385,7 +385,7 @@ body {
         align-items: center;
     }
     .item{
-        min-width: 260px;
+        min-width: 350px;
     }   
 }
 
@@ -528,7 +528,10 @@ body {
 .contact-list li {
     display: block;
 }
-
+.contact-list li a{
+    text-decoration: none;
+    color: var(--light);
+}
 .contact-form form {
     position: relative;
 }
@@ -580,6 +583,9 @@ body {
     }
     .contact-text{
         height: 450px;
+    }
+    .contact-text h2{
+        font-size: 60px;
     }
 }
 

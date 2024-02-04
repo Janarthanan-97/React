@@ -1,24 +1,11 @@
 import React from 'react'
 import './App.css'
-import Navbar from './component/Navbar'
-import Home from './component/Home'
-import About from './component/About'
-import Skills from './component/Skills'
-import Portfolio from './component/Portfolio'
-import Contact from './component/Contact'
-import Footer from './component/Footer'
-import Image from './component/Image'
+import Index from './component/Index'
 
 function App() {
   return (
     <div className='.container'>
-   <Navbar />
-   <Home />
-   <About />
-   <Skills />
-   <Portfolio />
-   <Contact />
-   <Footer />
+      <Index />
     </div>
   )
 }
