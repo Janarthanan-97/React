@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import Image from './Image'
+import axios from 'axios'
 
 function Home() {
 
@@ -22,7 +23,6 @@ function Home() {
         <a href='#about' className='btn-box' >More about me</a>
       </div>
       <Image />
-
     </section>
   )
 }
