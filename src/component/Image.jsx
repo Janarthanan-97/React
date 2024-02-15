@@ -3,12 +3,6 @@ import React from 'react'
 function Image() {
     return (
         <div className='image-container'>
-
-            {/* <div className='outer-circle'>
-                <div className='inner-circle'>
-                    
-                </div>
-            </div> */}
             <div className='image-div'>
             <img src='https://www.dropbox.com/scl/fi/u66kmetq8nxcwyvi910si/Home_photo.jpg?rlkey=d593skbiyrht1qldsrfd50c0i&dl=0&raw=1' alt='Home_photo'/>
             </div>

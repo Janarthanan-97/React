@@ -13,7 +13,6 @@
         transform: translateX(-100px);
         opacity: 0;
     }
-
     100% {
         transform: translateX(0px);
         opacity: 1;
@@ -379,8 +378,8 @@ body {
 
 @media (max-width:952px) {
     .service-list{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         justify-content: center;
         align-items: center;
     }
@@ -443,7 +442,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 0 40px;
-    transition: height 0.5s;
+    transition: 0.5s;
 }
 
 .layer h5 {
