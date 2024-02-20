@@ -32,19 +32,22 @@ function AddStock() {
         </div>
         :
         <div>
+            <div>
+                <h2 style={{ fontWeight: '500', color: 'white', textAlign: 'center', borderBottom: '3px solid green', margin: '10px', background: '#25522af7', padding: '10px' }}>Add a new stock</h2>
+            </div>
         <table className='table'>
             <thead>
                 <tr>
-                    <td>Name</td>
-                    <td>Price</td>
-                    <td>No of items</td>
+                    <td>New Item Name</td>
+                    <td>Price in Rs</td>
+                    <td>Total number of Item</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><input value={name} onChange={(e)=>{setName(e.target.value)}} /></td>
-                    <td><input value={price} onChange={(e)=>{setPrice(e.target.value)}} /></td>
-                    <td><input value={stock} onChange={(e)=>{setStock(e.target.value)}} /></td>
-                    <td><span className='box' onClick={addItem}>+</span></td>
+                    <td><input value={name} placeholder='Item Name...' onChange={(e)=>{setName(e.target.value)}} /></td>
+                    <td><input value={price} placeholder='Rs...' onChange={(e)=>{setPrice(e.target.value)}} /></td>
+                    <td><input value={stock} placeholder='Quantity of stock...' onChange={(e)=>{setStock(e.target.value)}} /></td>
+                    <td><span className='box' style={{width: '70px'}} onClick={addItem}>Add</span></td>
                 </tr>
             </thead>
         </table>

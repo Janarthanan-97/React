@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .box-shadow{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -33,11 +37,12 @@
     text-align: center;
 }
 .nav-bar{
-    background: linear-gradient(#50cc7f 0%, #f5d100 100%);
+    width: 259px;
     height: 100%;
     color: white;
+    /* margin-top: -10px; */
 }
-.nav-list > div{
+.nav-list > div > a{
     background-color: #276221;
     margin: 5px;
     padding: 5px;
@@ -48,26 +53,30 @@
     cursor: pointer;
     font-size: 1.05rem;
 }
-.nav-list > div:hover{
+.nav-list > div > a:hover{
     transform: scale(1.025);
     background-color: #27622180;
 }
+.nav-list > div > .active {
+    transform: scale(1.025);
+    background-color: #27622180;
+} 
 
 .grid-container{
     height: 100vh;
     width:100vw;
     display:grid;
-    grid-template-columns: '20vh 20vh 20vh 20vh 20vh';
+    grid-template-columns: '259px auto-fit';
+    grid-template-areas: 'nav page';
 }
 .nav-grid{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    min-width: 100%;
-    max-width: 100%;
+    background: linear-gradient(#50cc7f 0%, #f5d100 100%);
+    width: 259px; 
+    z-index: 1;
 }
 .page-grid{
-    grid-column-start: 2;
-    grid-column-end: 5;
+    grid-area: page;
+    width: 83vw;
 }
 Link{
     text-decoration: none;
@@ -79,22 +88,48 @@ Link{
 .menu{
     display: none;
 }
-.user-info{
-   height: 10rem;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 2rem;
-}
+
 .navopt-div{
     background: #27622150;
+    margin-top: 30px;
 }
 .logout-div{
     display: none;
 }
-
+.top-strip{
+    height: 60px;
+    background-color: #25522af7;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    z-index: 10;
+}
+.top-strip h2{
+    margin-left: 25px;
+    margin-top: px;
+    font-weight: 700;  
+}
+.user-div{
+    background-color: #740c0cef;
+    border-radius: 8px;
+    height: 50px;
+    width: 50px;
+    margin-right: 25px;
+}
+.user-div :hover{
+    background-color: #970c0cef;
+    box-shadow: 0 0 5px 5px #740c0c05;
+}
+.user-div div{
+    font-size: 28px;
+    text-align: center;
+    margin-top: 0.25rem;
+}
 @media (max-width: 952px) {
+    .nav-bar{
+        width: 100vw;
+    }
     .menu{
         display: block;
         margin: 5px;
@@ -104,14 +139,14 @@ Link{
         flex-direction: column;
     }
     .nav-grid{
-        /* margin-left: -100%; */
-        background-color: #276221;
+        /* background-color: #276221; */
+        width: 100%;
+    }
+    .page-grid{
+        width: 100vw;
     }
     .user-info{
         display: none;
-    }
-    .logout-div{
-        display: block;
     }
   
 }   

@@ -16,6 +16,7 @@ function CustOrderList(props) {
         let res = await storeRequest.getItem();
         for(let i=0; i<order.length; i++){
             for(let j=0; j<res.length; j++){
+                console.log(order, res, order[i].id == res[j]._id)
                 if(order[i].id == res[j]._id)
                 {
                     console.log({name:res[j].name, quantity:order[i].quantity})

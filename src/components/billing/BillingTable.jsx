@@ -61,9 +61,6 @@ function BillingTable() {
         if (res) {
             setCustomerName(res.customerName)
         }
-        if (customerNumber.length < 10) {
-            setCustomerName('')
-        }
     }
 
     useEffect(() => { fetchItem(); fetchOrder() }, [price, change, customerNumber])
@@ -72,50 +69,56 @@ function BillingTable() {
     return (
         <>
             {
-            loading
-                ?
-                <div className='m-5 p-5 d-flex row justify-content-center align-items-center'>
-                    <HashLoader
-                        color="#36d7b7"
-                        cssOverride={{}}
-                    />
-                </div>
-                :
-                <div>
-                    <table className='table'>
-                        <thead>
-                            <tr>
-                                <th colSpan='2'>
-                                    <label>Customer Name: </label>
-                                    <input placeholder='Name' value={customerName} onChange={(e) => { setCustomerName(e.target.value) }} />
-                                </th>
-                                <th colSpan='2'>
-                                    <label>Mobile:</label>
-                                    <input placeholder='Phone' onChange={(e) => { setCustomerNumber(e.target.value) }} />
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Item</th>
-                                <th>No of Item</th>
-                                <th>Price</th>
-                                <th>Option</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input value={item} onChange={handleItemChange} />
-                                </td>
-                                <td><input value={numOfItem} onChange={(e) => {
-                                    setNumOfItem(e.target.value);
-                                    setPrice(e.target.value * perPrice)
-                                }} /><span>*{perPrice}</span></td>
-                                <td>{price}</td>
-                                <td><span className='box' onClick={handlePlus}>+</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <FinalBill setArray={setArray} array={array} total={total} customerName={customerName} customerNumber={customerNumber} setCustomerNumber={setCustomerNumber} setTotal={setTotal} />
-                </div>
+                loading
+                    ?
+                    <div className='m-5 p-5 d-flex row justify-content-center align-items-center'>
+                        <HashLoader
+                            color="#36d7b7"
+                            cssOverride={{}}
+                        />
+                    </div>
+                    :
+                    <div>
+                        <div>
+                            <h2 style={{ fontWeight: '500', color: 'white', textAlign: 'center', borderBottom: '3px solid green', margin: '10px', background: '#25522af7', padding: '10px' }}>Bill Item</h2>
+                        </div>
+                        <table className='table'>
+                            <thead>
+                                <tr>
+                                    <th colSpan='2'>
+                                        <label>Customer Name: </label>
+                                        <input placeholder='Name' value={customerName} onChange={(e) => { setCustomerName(e.target.value) }} />
+                                    </th>
+                                    <th colSpan='2'>
+                                        <label>Customer Mobile:</label>
+                                        <input placeholder='Phone' onChange={(e) => { setCustomerNumber(e.target.value) }} />
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>No of Item</th>
+                                    <th>Price</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input value={item} onChange={handleItemChange} placeholder='Items...' />
+                                    </td>
+                                    <td><input value={numOfItem} placeholder='item count...' onChange={(e) => {
+                                        setNumOfItem(e.target.value);
+                                        setPrice(e.target.value * perPrice)
+                                    }} /><span>*{perPrice} Rs</span></td>
+                                    <td>{price} Rs</td>
+                                    <td><span className='box' onClick={handlePlus}>+</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <h2 style={{ fontWeight: '500', color: 'white', textAlign: 'center', borderBottom: '3px solid green', margin: '10px', background: '#25522af7', padding: '10px' }}>Bill List</h2>
+                            <FinalBill setArray={setArray} array={array} total={total} customerName={customerName} customerNumber={customerNumber} setCustomerNumber={setCustomerNumber} setTotal={setTotal} />
+                        </div>
+                    </div>
             }
         </>
     )

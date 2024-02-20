@@ -18,12 +18,11 @@ function ListAllStock() {
     if (searchItem != '') {
       let array = [];
       res.map(e => {
-        if (e.name.includes(searchItem.toUpperCase()))
-         {
+        if (e.name.includes(searchItem.toUpperCase())) {
           array.push(e)
-         }
-        })
-        setItem(array)
+        }
+      })
+      setItem(array)
     }
     else {
       setItem(res)
@@ -34,34 +33,37 @@ function ListAllStock() {
 
   return (
     <>
-    {
-      loading
-      ?
-      <div className='m-5 p-5 d-flex row justify-content-center align-items-center'>
-          <HashLoader
-              color="#36d7b7"
-              cssOverride={{}}
-          />
-      </div>
-      :
-      <div>
-      <div style={{ background: '#276221', display: 'flex', flexDirection: 'row-reverse' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', margin: "10px", borderBottom: '3px solid green' }}>
+        <h2>Items in Inventory</h2>
         <div style={{ height: '60%', width: '300px', display: 'flex', margin: 10, gap: 5 }}>
-          <Form.Control type="text" placeholder="Item" onChange={(e) => { setSearchItem(e.target.value); fetchItem();
-          setChange(pre => {
+          <Form.Control type="text" placeholder="Search item by Name..." onChange={(e) => {
+            setSearchItem(e.target.value);
+            fetchItem();
+            setChange(pre => {
               pre ? pre = 0 : pre = 1;
               return pre
-            }) }} />
+            })
+          }} />
         </div>
       </div>
-      <div style={{ margin: '5px', gap: '5px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '60vw' }}>
-        {item.map(ele => {
-          console.log(ele.name)
-          return <ItemCard name={ele.name} price={ele.price} number={ele.stock} id={ele._id} setChange={setChange} />
-        })}
-      </div>
-    </div>
-    }
+      {
+        loading
+          ?
+          <div className='m-5 p-5 d-flex row justify-content-center align-items-center'>
+            <HashLoader
+              color="#36d7b7"
+              cssOverride={{}}
+            />
+          </div>
+          :
+          <div>
+            <div style={{ margin: '5px', display: 'flex', flexDirection:'row', flexWrap: 'wrap', gap:'20px', justifyContent:'center' }}>
+              {item.map(ele => {
+                return <ItemCard name={ele.name} price={ele.price} number={ele.stock} id={ele._id} setChange={setChange} />
+              })}
+            </div>
+          </div>
+      }
     </>
   )
 }

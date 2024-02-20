@@ -4,25 +4,31 @@ import Button from 'react-bootstrap/Button';
 import orderRequest from '../service/orderRequest';
 
 function FinalBill(params) {
-    const { array, setArray, total, customerName, customerNumber, setCustomerNumber, setTotal} = params
+    const { array, setArray, total, customerName, customerNumber, setCustomerNumber, setTotal } = params
     const [change, setChange] = useState(0)
     const [show, setShow] = useState(false);
-  
+
     const handleShow = () => setShow(true);
 
-    const handleBill =  async ()=>{
-        let orders={items:[]}
-        array.map(e=>{
-            orders.items.push({id:e.itemID, quantity:e.numOfItem})
+    const handleBill = async () => {
+        if(customerNumber == '' && customerName == '')
+        {
+            alert("please enter customer name and number")
+        }
+        else{
+        let orders = { items: [] }
+        array.map(e => {
+            orders.items.push({ id: e.itemID, quantity: e.numOfItem })
         })
-        let res = await orderRequest.addOrder({customerName, customerNumber, orders})
+        let res = await orderRequest.addOrder({ customerName, customerNumber, orders })
         alert(res)
         handleShow();
+        }
     }
 
     const handleDelete = (index) => {
         console.log(array[index].price)
-        setTotal(state=>{
+        setTotal(state => {
             state = state - array[index].price;
             return state
         })
@@ -34,7 +40,7 @@ function FinalBill(params) {
         })
     }
 
-    useEffect(() => {}, [change])
+    useEffect(() => { }, [change])
 
     return (
         <div className='mt-5'>
@@ -61,19 +67,19 @@ function FinalBill(params) {
                         )
                     })}
                     <tr>
-                        <td colSpan='3' style={{fontWeight:'bolder'}}>Total</td>
-                        <td style={{fontWeight:'bolder'}}>{total}</td>
+                        <td colSpan='3' style={{ fontWeight: 'bolder' }}>Total</td>
+                        <td style={{ fontWeight: 'bolder' }}>{total}</td>
                         <td></td>
                     </tr>
                 </tbody>
             </table>
             <div>
-                <div style={{float:"right", marginTop:20, marginRight:"10%"}}>
+                <div style={{ float: "right", marginTop: 20, marginRight: "10%" }}>
                     <Button variant="success" onClick={handleBill}>
-                    Bill
-                </Button>
+                        Finish and print Bill
+                    </Button>
                 </div>
-                <PrintBill show={show} setShow={setShow} array = {array} total={total} setCustomerNumber={setCustomerNumber} setTotal={setTotal} setArray={setArray} />
+                <PrintBill show={show} setShow={setShow} array={array} total={total} setCustomerNumber={setCustomerNumber} setTotal={setTotal} setArray={setArray} />
             </div>
         </div>
     )

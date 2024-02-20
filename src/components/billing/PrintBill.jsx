@@ -19,7 +19,7 @@ function PrintBill(props) {
     <div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Print Bill</Modal.Title>
         </Modal.Header>
         <Modal.Body>
 
