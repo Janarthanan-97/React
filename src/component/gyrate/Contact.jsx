@@ -17,7 +17,7 @@ function Contact() {
             setEmail('')
             setSubject('')
             setMessage('')
-            const res = await axios.put(import.meta.env.VITE_URL, { name, email, subject, message })
+            const res = await axios.put(`${import.meta.env.VITE_URL}/sendMail`, { name, email, subject, message })
             alert(res.data)
         }
 

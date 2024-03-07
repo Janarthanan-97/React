@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import Image from './Image'
-import axios from 'axios'
 
 function Home() {
 
@@ -16,7 +15,7 @@ function Home() {
             loop={0} />}</span></h3>
         <p>I'm a Full stack developer, who has ability to bring imagination to screen</p>
         <div className='home-sci'>
-          <a href="https://www.instagram.com/janarthanan97/" target='_blank' style={{ "--i": 6 }} ><i className='bx bxl-instagram'></i></a>
+          <a href="https://linkedin.com/in/janamadhav/" target='_blank' style={{ "--i": 6 }} ><i class='bx bxl-linkedin-square' ></i></a>
           <a href="https://github.com/Janarthanan-97" target='_blank' style={{ "--i": 7 }} ><i class='bx bxl-github'></i></a>
           <a href="mailto:janamadhav13@gmail.com" style={{ "--i": 8 }} ><i className='bx bxl-gmail'></i></a>
         </div>

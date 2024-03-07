@@ -146,6 +146,8 @@ body {
 .home-content {
     width: 700px;
     animation: slideTop 1s ease forwards;
+    height: 500px;
+    /* border: 2px solid var(--primary); */
 }
 
 .home-content h3 {

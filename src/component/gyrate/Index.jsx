@@ -8,6 +8,7 @@ import Contact from './Contact'
 import Footer from './Footer'
 
 function Index() {
+  
   return (
     <>
     <Navbar />
