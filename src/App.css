@@ -389,6 +389,49 @@ body {
         min-width: 250px;
     }   
 }
+/* -------------------------Experience--------------------------------- */
+
+#experience{
+    padding: 50px
+}
+.experience-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-container h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.experience-container h2 span{
+    color: var(--primary);
+}
+.experience-box{
+    height: 359px;
+    width: 70vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background: var(--bg);
+    box-shadow: 0 0 10px 10px var(--bshadow);
+    border-radius: 8px;
+}
+.experience-box h4{
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.experience-box p{
+    box-shadow: 0 0 5px 5px var(--bshadow);
+    height: 2.5rem;
+    font-weight: 400;
+}
 
 /* -------------------------Portfolio--------------------------------- */
 .main-text {

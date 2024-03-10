@@ -5,7 +5,7 @@ function Portfolio() {
         <section>
             <div className='portfolio' id='portfolio'>
                 <div className='main-text'>
-                    <h2>My <span>Works</span></h2>
+                    <h2>My <span>Portfolio</span></h2>
 
                     <div className='portfolio-content'>
                         <div className='row'>
