@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+
+.nav-container{
+    height: 100px;
+    background-color: var(--bgcolor);
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Whisper", cursive;
+    width: 100vw;
+}
+.nav-container h2{
+    font-size: 36px;
+    margin-left: 25px;
+    font-weight: 600;
+}
+.nav-link-container{
+    display: flex;
+    gap: 25px;
+    font-size: 22px;
+    margin-right: 25px;
+}
+.nav-link-container a{
+    font-size: 26px;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--nav-font);
+}
+.nav-link-container .active {
+    color: var(--nav-highlight);
+}

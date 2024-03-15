@@ -1,20 +1,21 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import React from 'react'
 import './App.css'
-import Jana from './component/gyrate/Index'
-import Index from './component/form/Index'
-import Registration from './component/form/Registration'
+
+import Navbar from './component/Navbar/Navbar'
+import Home from './component/Home/Home'
+import About from './component/About/About'
+import Products from './component/Products/Products'
+import Contact from './component/Contact/Contact'
+
 
 function App() {
-
   return (
-    <div className='.container'>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/login' element={<Registration />} />
-          <Route path='/form' element={<Index />}/>
-          <Route path='/' element={<Jana />} />
-        </Routes>
-      </BrowserRouter>
+    <div>
+      <Navbar />
+      <Home />
+      <About />
+      <Products  />
+      <Contact />
     </div>
   )
 }

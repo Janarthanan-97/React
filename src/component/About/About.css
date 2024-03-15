@@ -1,0 +1,38 @@
+/* .about div{
+    background-image: url('https://www.dropbox.com/scl/fi/adsl97u521av6pjp9tw20/SL-072321-44560-15.jpg?rlkey=9zb5xit8ci5rirxuv1jvsbxo4&dl=0&raw');
+
+} */
+.about-container{
+    background-color: #FFE4B5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+.about-container h4{
+    font-weight: 600;
+}
+.about-cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    padding: 0 200px;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.card-container h6{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+}
+.topic-bar{
+    margin: 5px 0;
+    height: 3px;
+    width: 100%;
+    background-color: #BDB76B;
+}
+.card-container p{
+    width: 300px;
+    text-align: justify;
+}
