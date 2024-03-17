@@ -6,14 +6,16 @@ import FacilityCard from './FacilityCard'
 
 function Home() {
   return (
-    <div className='home-container'>
+    <section id='home'>
+      <div className='home-container'>
       <Carousel />
       <div className='facility-card-container'>
-        <FacilityCard />
-        <FacilityCard />
-        <FacilityCard />
+        <div className='card-container-1'><FacilityCard /></div>
+        <div className='card-container-2'><FacilityCard /></div>
+        <div className='card-container-3'><FacilityCard /></div>
       </div>
     </div>
+    </section>
   )
 }
 

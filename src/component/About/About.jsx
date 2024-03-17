@@ -4,7 +4,7 @@ import AboutCard from './AboutCard'
 
 function About() {
   return (
-    <section>
+    <section id='about'>
       <div className='about-container'>
       <h4>ABOUT US</h4>
       <div className='about-cards'>

@@ -1,7 +1,4 @@
-/* .about div{
-    background-image: url('https://www.dropbox.com/scl/fi/adsl97u521av6pjp9tw20/SL-072321-44560-15.jpg?rlkey=9zb5xit8ci5rirxuv1jvsbxo4&dl=0&raw');
 
-} */
 .about-container{
     background-color: #FFE4B5;
     display: flex;
@@ -35,4 +32,18 @@
 .card-container p{
     width: 300px;
     text-align: justify;
+}
+
+@media (max-width:952px) {
+    .about-cards{
+        padding: 0 10%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .card-container{
+        width: 80vw;
+    }
+    .card-container p{
+        width: 80vw;
+    }
 }

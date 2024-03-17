@@ -21,6 +21,9 @@
     font-size: 22px;
     margin-right: 25px;
 }
+.nav-link-container .icon{
+    display: none;
+}
 .nav-link-container a{
     font-size: 26px;
     font-weight: 400;
@@ -29,4 +32,39 @@
 }
 .nav-link-container .active {
     color: var(--nav-highlight);
+}
+
+@media (max-width:952px) {
+    .nav-container{
+        position: fixed;
+        bottom: 0px;
+        height: 75px;
+        /* gap: none; */
+        /* background-color: yellow; */
+    }
+    .nav-container h2{
+        display: none;
+    }
+    .nav-link-container{
+        justify-content: space-between;
+        width: 100vw;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .nav-link-container a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-link-container .icon{
+        display: inline-block;
+        font-size: 24px;
+    }
+    .nav-link-container a div{
+        position: absolute;
+        margin-top: 25px;
+        font-size: 18px;
+        /* display: none; */
+    }
+
 }
