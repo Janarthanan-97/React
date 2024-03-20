@@ -9,4 +9,20 @@
 
 *{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes drop-down{
+    100%{
+        opacity: 1;
+        scale: 1 1;
+    }
+}
+
+@keyframes pop-side {
+    100%{
+        opacity: 1;
+        scale: 1 1;
+    }
+    
 }

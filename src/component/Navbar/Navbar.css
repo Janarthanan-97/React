@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .nav-container{
     height: 100px;
@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Whisper", cursive;
+    font-family: "Poppins", sans-serif;
     width: 100vw;
 }
 .nav-container h2{
@@ -25,10 +25,11 @@
     display: none;
 }
 .nav-link-container a{
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 400;
     text-decoration: none;
     color: var(--nav-font);
+    margin-right: 25px;
 }
 .nav-link-container .active {
     color: var(--nav-highlight);
@@ -55,6 +56,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: -15px;
     }
     .nav-link-container .icon{
         display: inline-block;
@@ -62,8 +64,8 @@
     }
     .nav-link-container a div{
         position: absolute;
-        margin-top: 25px;
-        font-size: 18px;
+        margin-top: 35px;
+        font-size: 12px;
         /* display: none; */
     }
 

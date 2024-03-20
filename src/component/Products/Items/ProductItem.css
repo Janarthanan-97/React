@@ -1,0 +1,99 @@
+.product-container{
+    font-size: 12px;
+}
+.item-first-div{
+    font-size: 12px;
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 10px grey;
+}
+.item-image{
+
+    flex: 1 0 500px;
+    height: 400px;
+    width: 500px;
+    overflow: hidden;
+}
+.item-image img{
+    height: max(80%, 600px);
+    position: relative;
+    display: block;
+    margin: 1rem 0;
+}
+.item-info{
+    display: flex;
+    margin: 3rem 5rem;
+    gap: 3rem;
+}
+.item-detail table, .top-div table{
+    width: 30rem;
+}
+.item-detail table td, .top-div table td{
+    padding-top: 1rem;
+    border-bottom: 2px solid bisque;
+}
+.item-detail table td:first-child, .top-div table td:first-child{
+    font-weight: 600;
+}
+.item-detail .btn, .item-added-detail .btn{
+    height: 40px;
+    background-color: blanchedalmond;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-added-detail{
+    margin: 1rem 5rem;
+    text-align: justify;
+}
+.item-added-detail .top-div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.item-key-features{
+    margin-top: 2rem;
+}
+.item-key-features h6{
+    font-weight: 600;
+}
+.item-key-features li{
+    margin-top: 1rem;
+}
+
+@media (max-width:952px) {
+
+    .item-first-div{
+        font-size: 12px;
+        margin: 1.5rem .7rem;
+        padding: 1rem 1rem;
+        box-shadow: 0 0 10px grey;
+    }
+    .item-image img{
+        height: 10vh;
+        width: 20vw;
+        display: block;
+        margin: 1rem 0;
+    }
+    .item-info{
+        display: flex;
+       flex-direction: column;
+        margin: 3rem 0.7rem;
+    }
+    .item-detail table, .top-div table{
+        width: 100%;
+    }
+
+    .item-added-detail{
+        margin: 1rem .7rem;
+        text-align: justify;
+        margin-bottom: 4rem;
+    }
+    .item-added-detail .top-div{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+}

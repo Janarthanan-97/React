@@ -1,13 +1,12 @@
 import React from 'react'
 
-function ProductCard() {
+function ProductCard({url}) {
+  console.log(url)
   return (
     <div className='product-card-container'>
         <div className='image'>
-
+          <img src={url} />
         </div>
-        <h6>Product name</h6>
-        <p>Price:</p>
     </div>
   )
 }
