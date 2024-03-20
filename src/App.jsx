@@ -18,7 +18,7 @@ function App() {
 
 
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -33,7 +33,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   )
 }
 
