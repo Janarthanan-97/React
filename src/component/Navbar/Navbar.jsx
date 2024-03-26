@@ -52,7 +52,7 @@ function Navbar() {
               // if(pre==4){
               //   return 2
               // }
-              if(pre>=0){
+              if(pre>=0 && pre<5){
                 return pre-1
               }
             })}} ><i className="fa-solid fa-arrow-left"></i></a>
@@ -69,7 +69,7 @@ function Navbar() {
               // if(pre==0){
               //   return 3
               // }
-              if(pre<5)
+              if(pre<5 && pre>=0)
               {
                 return pre+1
               }
