@@ -7,7 +7,7 @@ function Navbar() {
   const [hideExceptProduct, setHideExceptProduct] = useState('flex')
   const [showProductItems, setShowProductItem] = useState('none')
   const [isChanged, setIsChaged] = useState(0)
-  const [navChange, setNavChange] = useState(2)
+  const [navChange, setNavChange] = useState(1)
   const navArray = ['#1','#2','#3','#4','#5']
   const handleProductClick = () => {
     setIsChaged(pre => {
@@ -52,8 +52,12 @@ function Navbar() {
               // if(pre==4){
               //   return 2
               // }
-              if(pre>=0 && pre<5){
+              console.log(pre)
+              if(pre>0 && pre<5){
                 return pre-1
+              }
+              else{
+                return 0
               }
             })}} ><i className="fa-solid fa-arrow-left"></i></a>
           </div>
@@ -69,9 +73,13 @@ function Navbar() {
               // if(pre==0){
               //   return 3
               // }
-              if(pre<5 && pre>=0)
+              console.log(pre)
+              if(pre<4 && pre>=0)
               {
                 return pre+1
+              }
+              else{
+                return 4
               }
             })}}><i className="fa-solid fa-arrow-right"></i></a>
           </div>
