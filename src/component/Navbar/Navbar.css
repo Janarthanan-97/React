@@ -112,8 +112,6 @@
         display: flex;
         overflow: hidden;
         scroll-behavior: smooth;
-        
-        
     }
     .product-nav-items a{
         scroll-snap-align: start;
@@ -141,7 +139,7 @@
     .nav-back{
         position: absolute;
         right: 25px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
     .nav-back a div{
         font-size: 12px;
