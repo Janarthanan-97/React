@@ -107,7 +107,7 @@
     }
     .product-nav-items{
         /* background-color: red; */
-        width: 60vw;
+        width: 40vw;
         height: 75px;
         display: flex;
         overflow: hidden;
