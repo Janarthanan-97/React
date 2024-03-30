@@ -7,7 +7,7 @@ function Navbar() {
   const [hideExceptProduct, setHideExceptProduct] = useState('flex')
   const [showProductItems, setShowProductItem] = useState('none')
   const [isChanged, setIsChaged] = useState(0)
-  const [navChange, setNavChange] = useState(1)
+  const [navChange, setNavChange] = useState(0)
   const navArray = ['#1','#2','#3','#4','#5']
   const handleProductClick = () => {
     setIsChaged(pre => {
@@ -39,13 +39,13 @@ function Navbar() {
           <div className='product-drop-down' style={{ '--drop': `${productDropDisplay}` }} >
             <NavLink to='/products/raw-peanuts' ><span className='icon' ><i className="fa-solid fa-cart-shopping"></i></span><div>Raw peanuts</div></NavLink>
             <NavLink to='/products/roasted-peanuts' ><span className='icon'><i className="fa-solid fa-cart-shopping"></i></span><div>Roasted Peanuts</div></NavLink>
-            <NavLink to='/products/virgin-groundnut-oil' ><span className='icon'><i className="fa-solid fa-cart-shopping"></i></span><div>Groundnut Oil</div></NavLink>
-            <NavLink to='/products/virgin-coconut-oil' ><span className='icon'><i className="fa-solid fa-cart-shopping"></i></span><div>Coconut oil</div></NavLink>
+            <NavLink to='/products/virgin-groundnut-oil' ><span className='icon'><i className="fa-solid fa-cart-shopping"></i></span><div>Virgin Groundnut Oil</div></NavLink>
+            <NavLink to='/products/virgin-coconut-oil' ><span className='icon'><i className="fa-solid fa-cart-shopping"></i></span><div>Virgin Coconut oil</div></NavLink>
+            <NavLink to='/products/pure-coconut-oil' ><span className='icon'><i className="fa-solid fa-cart-shopping"></i></span><div>Pure Coconut oil</div></NavLink>
           </div>
         </NavLink>
 
         {/* ////mini-screen-product */}
-        {/* <span className='icon' ><i className="fa-solid fa-cart-shopping"></i></span> */}
         <div className='product-nav-items-container' style={{ display: `${showProductItems}` }} >
           <div className='nav-arrow nav-arrow-left product-nav-other'>
             <a href={navArray[navChange]} onClick={()=>{setNavChange(pre=>{
@@ -83,7 +83,7 @@ function Navbar() {
               }
             })}}><i className="fa-solid fa-arrow-right"></i></a>
           </div>
-          <div className='nav-back product-nav-other' ><a><span className='icon' onClick={handleProductClick}><i className="fa-solid fa-bars"></i></span><div>Navigate</div></a></div>
+          <div className='nav-back product-nav-other' ><a><span className='icon' onClick={handleProductClick}><i className="fa-solid fa-bars"></i></span><div>Menu</div></a></div>
         </div>
         <NavLink className='nav-item' to='/contact' ><span className='icon'><i className="fa-solid fa-address-card"></i></span><div>Contact</div></NavLink>
       </div>
