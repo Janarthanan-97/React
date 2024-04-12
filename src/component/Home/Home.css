@@ -336,25 +336,25 @@
 
 
 .fa-mobile {
-    font-size: 500px;
+    font-size: 450px;
     color: #8C6A5D;
 }
 
 .home-contact-form {
     background-color: #ffffff80;
-    height: 370px;
-    width: 300px;
+    height: 340px;
+    width: 260px;
     border-radius: 2rem;
     position: absolute;
     z-index: 3;
-    margin-top: -29rem;
-    margin-left: calc(1.5rem + 13px);
+    margin-top: -26.56rem;
+    margin-left: calc(1.6rem + 13px);
 }
 
 .home-contact-form .home-input-container {
     background-color: #00000090;
-    height: 370px;
-    width: 300px;
+    height: 340px;
+    width: 260px;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
@@ -365,8 +365,8 @@
 
 .home-input-div {
     scroll-snap-align: start;
-    height: 370px;
-    width: 300px;
+    height: 340px;
+    width: 260px;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -389,8 +389,8 @@
     border-top: 2px solid #e09f3e;
     border-bottom: 2px solid #e09f3e;
     color: #e09f3e;
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
 }
 .home-input-div button{
     background-color: #e09f3e;
@@ -414,13 +414,13 @@
 .home-contact-nav {
     display: flex;
     gap: 25px;
-    height: 2rem;
-    width: 5.87rem;
+    height: 1.8rem;
+    width: 5.29rem;
     border-radius: 1.3rem;
     justify-content: center;
     align-items: center;
-    margin-top: 0.95rem;
-    margin-left: 6.5rem;
+    margin-top: 0.9rem;
+    margin-left: 5.5rem;
     background-color: #00000099;
 }
 
@@ -488,10 +488,12 @@ select option {
     .home-about-container .main-container {
         display: flex;
         flex-direction: column;
-        width: 400px;
+        width: calc(100vw - 40px);
         height: max-content;
         margin-top: 12rem;
         margin-bottom: 100px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .home-about-container .text-container {
@@ -543,7 +545,7 @@ select option {
         gap: 3rem;
     }
     .fa-mobile {
-        font-size: 500px;
+        font-size: 450px;
         color: #8C6A5D;
     }
 
