@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import greeting from './vector.svg'
 import founder from './founder.svg'
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 import GlimpseCard from './GlimpseCard'
 
 function Home() {
+  const [homeNavID, setHomeNavID] = useState(12)
   return (
     <section id='home'>
       <div className='home-container'>
@@ -70,6 +71,88 @@ function Home() {
             </p>
           </div>
 
+        </div>
+        <div className='home-contact-container'>
+          <h2>Quick <span>Enquiry</span></h2>
+          <div className='home-contact-main-div'>
+            <div className='home-contact-left'>
+              <div><span><i class="fa-solid fa-phone"></i></span><a href='tel:08069247325'>08069247325 Ext : 031</a></div>
+              <div><span><i class="fa-solid fa-envelope"></i></span><a href='mailto:gowreshinfo@gmail.com'>gowreshinfo@gmail.com</a></div>
+            </div>
+
+            <div className='home-contact-right'>
+              <div><i class="fa-solid fa-mobile"></i></div>
+              <div className='home-contact-form'>
+                <div className='home-input-container'>
+                  <div className='home-input-div' id='11'>
+                    <div className='home-product-dropdown'>
+                      <label>Select a product</label>
+                      <select className='home-product-dropdown'>
+                        <option value='Raw Peanuts' disabled selected>select a Product</option>
+                        <option value='Raw Peanuts'>Raw Peanuts</option>
+                        <option value='Roasted Peanuts'>Roasted Peanuts</option>
+                        <option value='Virgin Groundnut oil'>Virgin Groundnut oil</option>
+                        <option value='Virgin Coconut oil'>Virgin Coconut oil</option>
+                        <option value='Pure Coconut oil'>Pure Coconut oil</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className='home-input-div' id='12'>
+                    <div>
+                      <label>Name</label>
+                      <input />
+                    </div>
+                  </div>
+                  <div className='home-input-div' id='13'>
+                    <div>
+                      <div>
+                        <label>Email</label>
+                        <input />
+                      </div>
+                      <br />
+                      <div>
+                        <label>Mobile</label>
+                        <input type='email' />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='home-input-div' id='14'>
+                    <div>
+                      <label>Message</label>
+                      <textarea />
+                      <button>Submit</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='home-contact-nav'>
+                  <div><a
+                    onClick={() => {
+                      setHomeNavID(pre => {
+                        if (pre > 11 && pre <= 14) {
+                          console.log(pre)
+                          return pre - 1
+                        }
+                        return 11
+                      })
+                    }}
+                    href={`#${homeNavID}`}
+                    className='home-contact-nav-arrow'><i class="fa-solid fa-arrow-left"></i></a></div>
+                  <div onClick={() => {
+                    setHomeNavID(pre => {
+                      if (pre >= 11 && pre < 13) {
+                        console.log(pre)
+                        return pre + 1
+                      }
+                      return 14
+                    })
+                  }}><a
+                    href={`#${homeNavID}`}
+                    className='home-contact-nav-arrow'><i class="fa-solid fa-arrow-right"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
