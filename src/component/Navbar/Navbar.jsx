@@ -49,9 +49,6 @@ function Navbar() {
         <div className='product-nav-items-container' style={{ display: `${showProductItems}` }} >
           <div className='nav-arrow nav-arrow-left product-nav-other'>
             <a href={navArray[navChange]} onClick={()=>{setNavChange(pre=>{
-              // if(pre==4){
-              //   return 2
-              // }
               console.log(pre)
               if(pre>0 && pre<5){
                 return pre-1
@@ -70,9 +67,6 @@ function Navbar() {
           </div>
           <div className='nav-arrow nav-arrow-right product-nav-other' >
             <a href={navArray[navChange]} onClick={()=>{setNavChange(pre=>{
-              // if(pre==0){
-              //   return 3
-              // }
               console.log(pre)
               if(pre<4 && pre>=0)
               {

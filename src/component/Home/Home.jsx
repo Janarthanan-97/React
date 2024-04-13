@@ -4,7 +4,6 @@ import greeting from './vector.svg'
 import founder from './founder.svg'
 import Carousel from './Carousel'
 import ImageCard from './ImageCard'
-import { NavLink } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import GlimpseCard from './GlimpseCard'
 
@@ -86,7 +85,6 @@ function Home() {
                 <div className='home-input-container'>
                   <div className='home-input-div' id='11'>
                     <div className='home-product-dropdown'>
-                      <label>Select a product</label>
                       <select className='home-product-dropdown'>
                         <option value='Raw Peanuts' disabled selected>select a Product</option>
                         <option value='Raw Peanuts'>Raw Peanuts</option>

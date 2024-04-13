@@ -10,6 +10,7 @@
     font-family: "Poppins", sans-serif;
     width: 100vw;
     z-index: 100;
+    position: fixed;
 }
 .nav-container h2{
     font-size: 36px;
