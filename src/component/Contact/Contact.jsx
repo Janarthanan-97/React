@@ -1,7 +1,6 @@
 import React from 'react'
 import './Contact.css'
 import { Link } from 'react-router-dom'
-import i from '../Image/BACKGROUND.jpg'
 
 function Contact() {
   return (
@@ -64,7 +63,7 @@ function Contact() {
             </div>
           </div>
           <div className='contact-right'>
-            <img src={i} />
+            <img src='https://www.dropbox.com/scl/fi/51u4wrigwiu55l9wc948x/BACKGROUND.jpg?rlkey=umh3ls2pv4ll4fhzp8onzicdv&st=aidanchz&dl=0&raw=1' />
             <div className='contact-layer'>
               <div className='contact-layer-color'>
            <div className='contact-right-cell-container'>
@@ -105,7 +104,6 @@ function Contact() {
            </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
