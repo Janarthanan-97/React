@@ -48,6 +48,9 @@
     opacity: 1;
     transform: scale(1.1);
 }
+#home{
+    padding-top: 100px;
+}
 
 .home-product-container {
     background-color: #F5F5F5;
@@ -465,6 +468,9 @@ select option {
 }
 
 @media (max-width: 952px) {
+    #home{
+        padding-top: 0px;
+    }
     .carousel-container {
         aspect-ratio: 16/9;
     }

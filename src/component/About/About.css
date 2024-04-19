@@ -1,6 +1,7 @@
 
 #about{
     background-color: #f0f6ef;
+    padding-top: 100px;
 }
 #about  h4{
     font-size: 1.5rem;
@@ -83,6 +84,9 @@
 }
 
 @media (max-width:952px) {
+    #about{
+        padding-top: 0px;
+    }
     .about-container{
         display: flex;
         flex-direction: column;
