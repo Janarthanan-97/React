@@ -10,7 +10,7 @@ function About() {
             <h2>About <span>me</span></h2>
             <h4>Full stack developer</h4>
             <p>Welcome to my portfolio! I'm a dedicated and skilled Full Stack Developer with a passion for creating elegant and efficient web solutions. With a keen eye for detail and a deep understanding of both front-end and back-end technologies, I bring ideas to life through beautifully designed, user-friendly, and high-performing applications. </p>
-            <a className='btn-box' href='https://www.dropbox.com/scl/fi/d7c1w4dcz9xoygsf9zf7k/JANARTHANAN.pdf?rlkey=0x6s4m627vpivivanyej30ha4&dl=0&raw=1' target='_blank'>Resume</a>
+            <a className='btn-box' href='https://www.dropbox.com/scl/fi/6q44skmbq0cikr095r5mi/JANARTHANAN_NEW_RESUME.pdf?rlkey=k9y02dwk0t15n5hueobh70elt&st=t0p2jg9f&dl=0&raw=1' target='_blank'>Resume</a>
         </div>
     </section>
   )
