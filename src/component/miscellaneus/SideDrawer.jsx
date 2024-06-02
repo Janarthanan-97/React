@@ -20,6 +20,7 @@ import ProfileModal from './ProfileModal'
 import axios from 'axios'
 import ChatLoading from '../ChatLoading'
 import UserListItem from '../userAvatar/UserListItem'
+import { getSender } from '../config/ChatLogics'
 
 function SideDrawer() {
 

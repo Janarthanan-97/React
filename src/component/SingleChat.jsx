@@ -128,6 +128,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                 !selectedChatCompare || // if chat is not selected or doesn't match current chat
                 selectedChatCompare._id !== newMessageRecieved.chat._id
             ) {
+                // setFetchAgain(!fetchAgain);
                 if (!notification.includes(newMessageRecieved)) {
                     setNotification([newMessageRecieved, ...notification]);
                     setFetchAgain(!fetchAgain);
@@ -136,7 +137,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                 setMessages([...messages, newMessageRecieved]);
             }
         });
-    }, []);
+    });
 
     const typingHandler = async (e) => {
         setNewMessage(e.target.value);
