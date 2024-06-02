@@ -111,7 +111,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
         socket.on("typing", () => setIsTyping(true));
         socket.on("stop typing", () => setIsTyping(false));
 
-    }, [])
+    })
 
     useEffect(() => {
         fetchMessages();
@@ -123,10 +123,11 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
         
         socket.on("message recieved", (newMessageRecieved) => {
             fetchMessages();
+            setFetchAgain(!fetchAgain);
             console.log(newMessageRecieved)
             if (
                 !selectedChatCompare || // if chat is not selected or doesn't match current chat
-                selectedChatCompare._id !== newMessageRecieved.chat._id
+                selectedChatCompare._id != newMessageRecieved.chat._id
             ) {
                 setFetchAgain(!fetchAgain);
                 if (!notification.includes(newMessageRecieved)) {
