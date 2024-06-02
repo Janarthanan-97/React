@@ -64,7 +64,7 @@ function SideDrawer() {
                 },
             };
 
-            const { data } = await axios.put(`${import.meta.env.VITE_URL}/api/user`,{keyword: search}, config);
+            const { data } = await axios.get(`${import.meta.env.VITE_URL}/api/user?search=${search}`, config);
             setLoading(false);
             setSearchResult(data);
 
@@ -132,7 +132,7 @@ function SideDrawer() {
                         onClick={onOpen}
                     >
                         <i className="fas fa-search"></i>
-                        <Text d={{ base: "none", md: "flex" }} px={4}>
+                        <Text display={{ base: "none", md: "flex" }} px={4}>
                             Search User
                         </Text>
                     </Button>
@@ -198,7 +198,9 @@ function SideDrawer() {
                         Search Users
                     </DrawerHeader>
                     <DrawerBody>
-                        <Box>
+                        <Box 
+                        display='flex'
+                        >
                             <Input
                                 placeholder="Search by name or email"
                                 mr={2}

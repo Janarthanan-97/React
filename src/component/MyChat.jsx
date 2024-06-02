@@ -1,4 +1,4 @@
-import { Box, Button, Stack, useToast } from '@chakra-ui/react'
+import { Box, Button, Stack, Text, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { chatState } from '../component/Context/ChatProvider'
 import axios from 'axios'
@@ -23,6 +23,7 @@ function MyChat({ fetchAgain }) {
             const { data } = await axios.get(`${import.meta.env.VITE_URL}/api/chat`, config)
             setChats(data)
         } catch (error) {
+            console.log(error)
             toast({
                 title: "Error Occured!",
                 description: "Failed to Load the chats",
@@ -75,7 +76,7 @@ function MyChat({ fetchAgain }) {
             </Box>
 
             <Box
-                d="flex"
+                display="flex"
                 flexDir="column"
                 p={3}
                 bg="#F8F8F8"
@@ -90,10 +91,11 @@ function MyChat({ fetchAgain }) {
                             overflowY="scroll"
                         >
                             {chats.map((chat) => {
-                                <Box
+                                return (
+                                    <Box
                                     onClick={() => setSelectedChat(chat)}
                                     cursor="pointer"
-                                    bg={selectedChat === chat ? "#38B2AC" : "#E8E8E8"}
+                                    bg={selectedChat === chat ? "#0000ff80" : "#E8E8E8"}
                                     color={selectedChat === chat ? "white" : "black"}
                                     px={3}
                                     py={2}
@@ -119,6 +121,7 @@ function MyChat({ fetchAgain }) {
                                     )
                                    }
                                 </Box>
+                                )
 
                             })}
 
