@@ -134,7 +134,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                     setFetchAgain(!fetchAgain);
                 }
             } else {
-                setMessage([...messages, newMessageRecieved]);
+                setMessages([...messages, newMessageRecieved]);
             }
         });
     });
