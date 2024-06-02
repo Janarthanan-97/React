@@ -33,9 +33,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
     const {
         selectedChat, setSelectedChat, user, notification, setNotification } = chatState()
 
-    
-
-    const fetchMessages = async () => {
+        const fetchMessages = async () => { 
         if (!selectedChat) return;
 
         try {
@@ -124,6 +122,8 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
     useEffect(() => {
         
         socket.on("message recieved", (newMessageRecieved) => {
+            fetchMessages();
+            console.log(newMessageRecieved)
             if (
                 !selectedChatCompare || // if chat is not selected or doesn't match current chat
                 selectedChatCompare._id !== newMessageRecieved.chat._id
