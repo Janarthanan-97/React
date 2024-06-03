@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { chatState } from './Context/ChatProvider'
 import { Box, Button, FormControl, IconButton, Input, InputGroup, InputRightElement, Text, useToast } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowRightIcon } from '@chakra-ui/icons'
@@ -19,6 +19,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
     const [typing, setTyping] = useState(false);
     const [istyping, setIsTyping] = useState(false);
     const toast = useToast()
+    const chatRef = useRef(null)
    
 
     // const defaultOptions = {
@@ -104,7 +105,15 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
         }
     }
 
-
+    const scrollToBottom = ()=>{
+        if(chatRef.current){
+          console.log(chatRef.current)
+        //   console.log(chatRef.current.scrollHeight)
+          chatRef.current.scrollTop = chatRef.current.scrollHeight;
+        }
+      }
+    
+      
 
     useEffect(() => {
         // socket = io(import.meta.env.VITE_URL)
@@ -112,7 +121,6 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
         socket.on("connected", () => setSocketConnected(true));
         socket.on("typing", () => setIsTyping(true));
         socket.on("stop typing", () => setIsTyping(false));
-
     })
 
     useEffect(() => {
@@ -140,6 +148,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                 setMessages([...messages, newMessageRecieved]);
             }
         });
+        scrollToBottom()
     });
 
     const typingHandler = async (e) => {
@@ -219,7 +228,10 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                             overflowY="hidden"
                         >
                             {/* {isLoading ? (null) : {( */}
-                            <div className="messages" style={{overflowY:'scroll'}}>
+                            <div className="messages" 
+                            ref={chatRef}
+                            style={{overflowY:'scroll'}}
+                            >
                                 <ScrollableChat messages={messages} />
                             </div>
                             {/* )}} */}
