@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { chatState } from './Context/ChatProvider'
-import { Box, FormControl, IconButton, Input, Text, useToast } from '@chakra-ui/react'
-import { ArrowBackIcon } from '@chakra-ui/icons'
+import { Box, Button, FormControl, IconButton, Input, InputGroup, InputRightElement, Text, useToast } from '@chakra-ui/react'
+import { ArrowBackIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 import { getSender, getSenderFull } from "./config/ChatLogics.js"
 import ProfileModal from './miscellaneus/ProfileModal'
@@ -64,9 +64,8 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
 
     }
 
-    const sendMessage = async (event) => {
-        if (event.key === "Enter") {
-            socket.emit("stop typing", selectedChat._id);
+    const sendMessage = async ()=>{
+        socket.emit("stop typing", selectedChat._id);
 
             try {
                 const config = {
@@ -97,9 +96,12 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                     position: "bottom-right",
                 });
             }
+    }
+
+    const sendMessageViaEnter = async (event) => {
+        if (event.key === "Enter") {
+            sendMessage()
         }
-
-
     }
 
 
@@ -217,16 +219,17 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                             overflowY="hidden"
                         >
                             {/* {isLoading ? (null) : {( */}
-                            <div className="messages">
+                            <div className="messages" style={{overflowY:'scroll'}}>
                                 <ScrollableChat messages={messages} />
                             </div>
                             {/* )}} */}
                             <FormControl
-                                onKeyDown={sendMessage}
+                                onKeyDown={sendMessageViaEnter}
                                 id="first-name"
                                 isRequired
                                 mt={3}
                             >
+                                <InputGroup>
                                 <Input
                                     variant="filled"
                                     bg="#E0E0E0"
@@ -234,6 +237,12 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                                     value={newMessage}
                                     onChange={typingHandler}
                                 />
+                                <InputRightElement>
+                                <Button size="sm" backgroundColor='#BEE3F8' h='1.75rem' _hover={{backgroundColor:'#BEE3F890'}} onClick={sendMessage}>
+                                    <ArrowRightIcon />
+                                </Button>
+                                </InputRightElement>
+                                </InputGroup>
                             </FormControl>
                         </Box>
                     </>
