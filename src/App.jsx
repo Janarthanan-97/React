@@ -4,9 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import ChatPage from './component/Pages/ChatPage'
 
 function App() {
-
-
-  
+ 
   return (
     <div>
       <Routes>

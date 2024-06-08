@@ -5,6 +5,7 @@ import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from 'axios';
+import ChatLoading from '../ChatLoading';
 
 function Signup() {
 
@@ -16,11 +17,14 @@ function Signup() {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [picLoading, setPicLoading] = useState(false);
+    const [loading, setLoading] = useState(false)
     const toast = useToast()
 
     const submitHandler = async () => {
         // setPicLoading(true);
+        setLoading(true)
         if (!name || !email || !password || !confirmpassword) {
+            setLoading(false)
             toast(
                 {
                     title: 'Please Fill all the Feilds',
@@ -31,9 +35,11 @@ function Signup() {
                 }
             )
             // setPicLoading(false);
+           
             return
         }
         if (password !== confirmpassword) {
+            setLoading(false)
             toast({
                 title: "Passwords Do Not Match",
                 status: "warning",
@@ -41,6 +47,7 @@ function Signup() {
                 isClosable: true,
                 position: "bottom-right",
             });
+           
             return;
         }
         // console.log(name, email, password, pic);
@@ -60,6 +67,7 @@ function Signup() {
                 // ,config
             )
             // console.log(data)
+            setLoading(false)
 
             toast({
                 title: "Registration Successful",
@@ -73,6 +81,7 @@ function Signup() {
             //   setPicLoading(false);
             // history.push("/chats");
         } catch (error) {
+            setLoading(false)
             toast({
                 title: "Error Occured!",
                 description: error.response.data.message,
@@ -134,7 +143,9 @@ function Signup() {
 
     return (
         <div>
-            <VStack spacing="5px">
+            {
+                loading?(<ChatLoading />):(
+                    <VStack spacing="5px">
                 <FormControl id="first-name" isRequired>
                     <FormLabel>Name</FormLabel>
                     <Input
@@ -203,6 +214,8 @@ function Signup() {
                     Sign Up
                 </Button>
             </VStack>
+                )
+            }
         </div>
     )
 }

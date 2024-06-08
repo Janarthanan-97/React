@@ -10,10 +10,12 @@ import { AddIcon } from '@chakra-ui/icons'
 function MyChat({ fetchAgain }) {
     const [loggedUser, setLoggedUser] = useState()
     const { selectedChat, setSelectedChat, user, chats, setChats } = chatState()
+    const [loader, setLoader] = useState(false)
 
     const toast = useToast()
 
     const fetchChat = async () => {
+        setLoader(true)
         try {
             const config = {
                 headers: {
@@ -22,8 +24,10 @@ function MyChat({ fetchAgain }) {
             }
             const { data } = await axios.get(`${import.meta.env.VITE_URL}/api/chat`, config)
             setChats(data)
+            setLoader(false)
         } catch (error) {
             console.log(error)
+            setLoader(false)
             toast({
                 title: "Error Occured!",
                 description: "Failed to Load the chats",

@@ -2,19 +2,21 @@ import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, V
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import ChatLoading from '../ChatLoading';
 
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [show, setShow] = useState(false)
     const [user, setUser] = useState()
+    const  [loading, setLoading] = useState(false)
 
     const navigate = useNavigate()
 
     const toast = useToast()
 
     const submitHandler = async()=>{
-        // setLoading(true);
+        setLoading(true);
         if (!email || !password){
             toast({
                 title: "Please Fill all the Feilds",
@@ -23,12 +25,12 @@ function Login() {
                 isClosable: true,
                 position: "bottom-right",
               });
-            //   setLoading(false);
+              setLoading(false);
               return;
         }
 
         try {
-
+            setLoading(true);
             let {data} = await axios.post(`${import.meta.env.VITE_URL}/api/user/login`, {email, password})
             toast({
                 title: "Login Successful",
@@ -40,7 +42,7 @@ function Login() {
               console.log(JSON.stringify(data))
             //   setUser(data);
             localStorage.setItem("userInfo", JSON.stringify(data));
-            // setLoading(false);
+            setLoading(false);
             navigate("/chats");
 
             
@@ -52,7 +54,11 @@ function Login() {
 
     return (
         <div>
-            <VStack spacing='10px'>
+             {
+                loading ? (
+                    <ChatLoading />
+                ):(
+                    <VStack spacing='10px'>
                 <FormControl id='email' isRequired >
                     <FormLabel>Email Address</FormLabel>
                     <Input
@@ -101,6 +107,8 @@ function Login() {
                 </Button>
 
             </VStack>
+                )
+             }
         </div>
     )
 }

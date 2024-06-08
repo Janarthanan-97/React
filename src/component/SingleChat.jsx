@@ -8,6 +8,7 @@ import ProfileModal from './miscellaneus/ProfileModal'
 import UpdateGroupChatModal from './miscellaneus/UpdateGroupChatModal'
 import ScrollableChat from './ScrollableChat'
 import io from "socket.io-client";
+import ChatLoading from './ChatLoading.jsx'
 
 function SingleChat({ fetchAgain, setFetchAgain }) {
     var socket, selectedChatCompare;
@@ -21,7 +22,6 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
     const toast = useToast()
     const chatRef = useRef(null)
    
-
     // const defaultOptions = {
     //     loop: true,
     //     autoplay: true,
@@ -36,14 +36,13 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
 
         const fetchMessages = async () => { 
         if (!selectedChat) return;
-
+        setLoading(true)
         try {
             const config = {
                 headers: {
                     Authorization: `Bearer ${user.token}`,
                 },
             };
-            setLoading(true);
             const { data } = await axios.get(`${import.meta.env.VITE_URL}/api/message/${selectedChat._id}`, config)
             setMessage(data);
             setLoading(false);
@@ -51,6 +50,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
 
         } catch (error) {
             console.log(error)
+            setLoading(false)
             toast({
                 title: "Error Occured in loading messages!",
                 description: "Failed to Load the Messages",
@@ -114,7 +114,6 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
       }
     
       
-
     useEffect(() => {
         // socket = io(import.meta.env.VITE_URL)
         socket.emit("setup", user);
@@ -177,7 +176,8 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
         <>
             {selectedChat
                 ? (
-                    <>
+                    loading ? ( <ChatLoading /> ) : (
+                        <>
                         <Text
                             fontSize={{ base: "28px", md: "30px" }}
                             pb={3}
@@ -258,6 +258,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
                             </FormControl>
                         </Box>
                     </>
+                    )
                 )
                 : (
                     <Box d="flex" alignItems="center" justifyContent="center" h="100%">
