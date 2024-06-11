@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 
 function About() {
+  const [load, setLoad] = useState(0)
+
+
   return (
     <section className='about' id='about'>
         <div className='about-img'>
-        <img src="https://www.dropbox.com/scl/fi/74ezk5g8erfhyfde1qg9e/About_Photo.jpg?rlkey=841n4mht7xical0er712f79r5&dl=0&raw=1" alt="drive image"/>
+        <motion.img animate={{scale:load}} onLoad={()=>{setLoad(1)}} src="https://www.dropbox.com/scl/fi/74ezk5g8erfhyfde1qg9e/About_Photo.jpg?rlkey=841n4mht7xical0er712f79r5&dl=0&raw=1" alt="drive image"/>
         </div>
         <div className='about-text'>
             <h2>About <span>me</span></h2>

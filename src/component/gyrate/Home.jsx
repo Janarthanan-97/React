@@ -3,6 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 import Image from './Image'
 
 function Home() {
+  
 
   return (
     <section className='home' id='home'>

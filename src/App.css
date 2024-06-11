@@ -670,7 +670,7 @@ svg {
     height: 500px;
     width: 500px;
     animation: rotate 5s infinite linear forwards, appear 2s ease-out forwards;
-    animation-delay: 3s;
+    /* animation-delay: 3s; */
     position: absolute;
     opacity: 0;
 }
