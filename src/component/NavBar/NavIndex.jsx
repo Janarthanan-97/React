@@ -4,6 +4,7 @@ import { motion, sync, useCycle } from "framer-motion"
 import { useRef } from "react";
 import { useDimensions } from './useDimensions';
 import Navigation from './Navigation';
+import './NavIndex.css'
 
 
 const sidebar = {
@@ -31,7 +32,7 @@ function NavIndex() {
     const containerRef = useRef(null);
     const { height } = useDimensions(containerRef);
     return (
-      <div>
+      <motion.div>
         <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
@@ -42,7 +43,7 @@ function NavIndex() {
         <Navigation />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
-      </div>
+      </motion.div>
     )
 }
 
