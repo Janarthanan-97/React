@@ -8,7 +8,7 @@ function Experience() {
                 <div className='experience-box'>
                     <h4>Medical Coding</h4>
                     <p>Company: <span style={{color:'#e8590c'}}>Optum Health Care</span></p>
-                    <p>Years of Experience: 2.5 years</p>
+                    <p>Years of Experience: 2.5 years</p>   
                     <p>Designation: Medical Coder, ICD-10-CM, HCC (part C)</p>
                     <p>Project: Wellmed</p>
                     <p>Status: <span style={{color:'#76FF7A'}}>Active</span></p>
