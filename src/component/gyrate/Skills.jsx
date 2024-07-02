@@ -40,7 +40,12 @@ function Skills() {
                 <div className='container'>
                     <h1 className='sub-title'>My <span>Skills</span></h1>
 
-                    <motion.div className='service-list'>
+                    <motion.div className='service-list'
+                    variants={{
+                        visible:{transition:{staggerChildren:0.2}}
+                    }}
+                    animate='visible'
+                    >
 
                         <SkillReveal logo='bx bxl-html5' content = 'HTML' progress="80" />
 
