@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Assuming you use React Router for navigation
+import Spinner from '../Tools/Spinner';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -8,6 +9,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
   let navigate = useNavigate()
 
   const handleRegister = async () => {
@@ -19,10 +21,12 @@ const Register = () => {
       setMessage('')
       if(password == confirmPassword){
         try {
+          setLoading(true)
           let {data} = await axios.post(`${import.meta.env.VITE_URL}/users/register`, {name, email, password})
             navigate('/login')
         } catch (error) {
           setMessage(error.response.data)
+          setLoading(false)
         }
       }
       else{
@@ -33,7 +37,7 @@ const Register = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      
+      {loading && <Spinner/>}
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="text-center text-3xl font-extrabold text-gray-900">Create an account</h2>
         <p className="mt-2 text-center text-sm text-gray-600">

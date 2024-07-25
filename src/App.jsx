@@ -15,7 +15,7 @@ function App() {
       <Routes>
       <Route path='/' element={<Home />} >
         <Route path='/' element={<AllProperty/>} />
-        <Route path='/update-property' element={<CreateProperty />} />
+        <Route path='/update-property/:id' element={<CreateProperty />} />
         <Route path='/my-property' element={<MyProperty />} />
       </Route>
         <Route path='/login' element={<Login />} />

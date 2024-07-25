@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropertyCard from './PropertyCard'
 import axios from 'axios';
-
-
-// const propertiesData = [
-//     { id: 1, title: 'House in Downtown', price: 250000, location: 'Downtown', type: 'House' },
-//     { id: 2, title: 'Apartment in Suburb', price: 150000, location: 'Suburb', type: 'Apartment' },
-//     // Add more properties as needed
-//   ];
+import Loader from '../Tools/Loader';
 
 function AllProperty() {
 
@@ -19,6 +13,7 @@ function AllProperty() {
     propertyType: '',
   });
   const [propertiesData, setpropertiesData] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -36,14 +31,17 @@ function AllProperty() {
 
   const fetchProperty = async () => {
     try {
+      setLoading(true)
       const { data } = await axios.put(`${import.meta.env.VITE_URL}/property`, filters, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       })
       setpropertiesData(data)
+      setLoading(false)
     } catch (error) {
       console.log(error)
+      setLoading(false)
     }
   }
 
@@ -53,6 +51,7 @@ function AllProperty() {
   return (
     <div>
       <div className="flex flex-wrap gap-4 mb-4 justify-center items-center">
+       
         {/* Price Range Filter */}
         <div className='border border-gray-300 shadow-md p-3'>
           <label className="block font-medium">Price Range:</label>
@@ -112,9 +111,11 @@ function AllProperty() {
       </div>
 
       {/* Property Listings */}
+      {loading && <Loader/>}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      
         {filteredProperties.map(property => (
-          <PropertyCard key={property._id} property={property} />
+          <PropertyCard key={property._id} property={property} fromMyProperty = {false} />
         ))}
       </div>
     </div>

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
-import AllProperty from './AllProperty';
-import CreateProperty from './CreateProperty'
 
 
 
@@ -24,8 +22,11 @@ const HomePage = () => {
         {/* Right section - Menu icon and Logout button */}
         <div className="flex items-center gap-5">
           {/* Menu icon */}
+          <Link to={'/'}>
+            Home
+          </Link>
           <Link
-            to={'/update-property'}>
+            to={'/update-property/0'}>
             Create Property
           </Link>
 
@@ -36,8 +37,11 @@ const HomePage = () => {
 
           {/* Logout button */}
           <button
-            // onClick={onLogout}
             className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+            onClick={()=>{
+              localStorage.clear()
+              navigate('/login')
+            }}
           >
             Logout
           </button>
