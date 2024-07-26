@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+
 
 const PropertyForm = () => {
   let { id } = useParams()
+  let navigate = useNavigate()
   const [property, setProperty] = useState(false)
 
   const [formData, setFormData] = useState({
@@ -52,15 +54,16 @@ const PropertyForm = () => {
   }
 
   const handleDelete = async () => {
+    console.log({_id:id})
     try {
-      let { data } = await axios.delete(`${import.meta.env.VITE_URL}/property/delete`, { _id: id }
-      //   , {
-      //   headers: {
-      //     Authorization: `bearer ${localStorage.getItem('token')}`,
-      //   }
-      // }
+      let { data } = await axios.delete(`${import.meta.env.VITE_URL}/property/delete/${id}`,  {
+                  headers: {
+          Authorization: `bearer ${localStorage.getItem('token')}`,
+        }
+      }
     )
       console.log(data)
+      navigate('/my-property')
     } catch (error) {
       console.log(error)
     }
