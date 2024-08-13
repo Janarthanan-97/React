@@ -1,28 +1,24 @@
+import axios from 'axios'
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Login from './component/Auth/Login'
-import Register from './component/Auth/Register'
-import Home from './component/Dashboard/Home'
-import AllProperty from './component/Dashboard/AllProperty'
-import CreateProperty from './component/Dashboard/CreateProperty'
-import MyProperty from './component/Dashboard/MyProperty'
 
 function App() {
-
   return (
-    <div>
-    <BrowserRouter>
-      <Routes>
-      <Route path='/' element={<Home />} >
-        <Route path='/' element={<AllProperty/>} />
-        <Route path='/update-property/:id' element={<CreateProperty />} />
-        <Route path='/my-property' element={<MyProperty />} />
-      </Route>
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
-    
-    </BrowserRouter>
+    <div className='flex justify-center m-[100px] gap-4'>
+      <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition duration-300"
+      onClick={async()=>{
+        await axios.get("http://192.168.1.7/blink")
+      }}
+      >
+        BLINK
+    </button>
+
+    {/* <button className="bg-red-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-50 transition duration-300"
+      onClick={async()=>{
+        await axios.get("http://192.168.1.7/off")
+      }}
+      >
+        OFF
+    </button> */}
     </div>
   )
 }
