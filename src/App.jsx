@@ -6,7 +6,8 @@ function App() {
     <div className='flex justify-center m-[100px] gap-4'>
       <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition duration-300"
       onClick={async()=>{
-        await axios.get("http://192.168.1.7/blink")
+       let res = await axios.get("http://192.168.1.7/blink")
+       console.log(res)
       }}
       >
         BLINK
